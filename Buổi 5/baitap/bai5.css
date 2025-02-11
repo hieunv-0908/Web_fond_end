@@ -1,0 +1,22 @@
+.head{
+    color: blue;
+    font-size: x-large;
+}
+
+.comment{
+    color: rgb(17, 21, 112);
+
+}
+
+.h{
+    border-left: 10px solid rgb(156, 228, 40);
+    background-color: antiquewhite;
+}
+
+.css{
+    font-size: x-large;
+}
+.comment1{
+    font-size: larger;
+    color: darkblue;
+}

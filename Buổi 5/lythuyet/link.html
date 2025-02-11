@@ -1,0 +1,29 @@
+<!-- có 3 cách liên kết css vào file html -->
+ <!-- c1:inline:viết css trực tiếp trong thẻ (element) -->
+  <!--c2:sử dụng internal:tạo cặp thẻ style sau đó viết css vào phần đó  -->
+    <!--c3: external:
+    b1:tạo một file có đuôi css 
+    b2:viết code css vào trong file sau đó liến kết với file html
+     -->
+  <!DOCTYPE html>
+  <html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- c2: -->
+     <style>
+        /* viết css trong này */
+        h1{
+            background-color: black;
+            color: white;
+        }    
+     </style>
+     <link rel="stylesheet" href="./external.css">
+  </head>
+  <body align="center">
+    <h1>Chào mừng đến với trang web</h1>
+    <h2>Dùng css theo cách external</h2>
+    <p style="color: chartreuse; font-size: 30px;">HỌc css cơ bản</p>
+  </body>
+  </html>

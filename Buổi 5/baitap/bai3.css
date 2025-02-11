@@ -1,0 +1,24 @@
+.th{
+    background-color: blue;
+    color: white;
+}
+
+.tr{
+    text-align: center;
+}
+
+.h1{
+    text-align: center;
+    color: darkblue;
+}
+
+.main{
+    background-color: whitesmoke;
+}
+
+    .tr2{
+        background-color: white;
+    }
+    .table{
+        width: 100%;
+    }
