@@ -1,0 +1,13 @@
+.div1{
+    border: 15px solid whitesmoke;
+    display: inline-block;
+}
+.div2{
+    border-radius: 20%;
+}
+
+.button{
+    background-color: rgb(47, 106, 200);
+    border-radius: 8%;
+    width: 100%;
+}

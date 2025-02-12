@@ -1,0 +1,58 @@
+.divF1_0 {
+    background-color: green;
+    height: 35px;
+    color: white;
+    padding-top: 10px;
+
+}
+
+.a {
+    color: white;
+    text-decoration: none;
+    padding-left: 10px;
+}
+
+.aMe {
+    padding-left: 1250px;
+}
+
+.span{
+    padding-left: 15px;
+}
+
+.divF1_1{
+    background-color: rgb(220, 214, 214);
+    text-align: center;
+    height: 150px;
+    padding: 10px;
+}
+
+
+.button{
+    background-color: rgba(14, 170, 14, 0.733);
+    color: white;
+    height: 30px;
+    border-radius: 10%;
+}
+.span2{
+    color: rgba(77, 72, 72, 0.434);
+}
+.button2{
+    background-color:rgba(77, 72, 72, 0.434) ;
+    padding: 2%;
+    width: 500px;
+    border-radius: 10%;
+}
+
+.a3{
+    text-decoration: none;
+    color: white;
+    
+}
+
+.div{
+    background-color: black;
+    text-align: center;
+    padding-top: 10px;
+    padding-bottom: 10px ;
+}
