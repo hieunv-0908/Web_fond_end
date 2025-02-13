@@ -1,0 +1,32 @@
+.container {
+    position: relative;
+    display: inline-block;
+}
+
+.image {
+    display: block;
+    width: 100%;
+}
+
+.text-overlay {
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+    right: 10px;
+    background: rgba(0, 0, 0, 0.5);
+    color: white;
+    padding: 10px;
+    font-size: 18px;
+    text-align: center;
+}
+
+.span{
+    border-left: 8px solid orange;
+    padding-left: 5px;
+}
+
+.span1{
+        border-top:1px solid black;
+        padding-top: 15px ;
+}
+
