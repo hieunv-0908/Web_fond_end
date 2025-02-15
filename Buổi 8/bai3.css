@@ -1,0 +1,42 @@
+.spantitle {
+    border-bottom: 2px solid red;
+    width: 12%;
+    padding: 10px;
+}
+
+.spanContent {
+    text-align: justify;
+    color: rgba(46, 36, 36, 0.523);
+    border: 0px solid red;
+    width: 20%;
+}
+
+.button {
+    border-radius: 3px;
+    border-color: rgba(255, 0, 0, 0.625);
+    margin-top: 10px;
+    padding: 8px;
+    width: 10%;
+    background-color: rgba(240, 248, 255, 0);
+}
+
+.image2 {
+    width: 25%;
+    border-radius: 5px;
+}
+
+.article2 {
+    border-left: 2px solid rgba(59, 40, 40, 0.381);
+    position: relative;
+    bottom: 400px;
+    left: 27%;
+    padding-left: 55px;
+}
+
+.article3 {
+    border-left: 2px solid rgba(115, 85, 85, 0.441);
+    position: relative;
+    bottom: 815px;
+    left: 57%;
+    padding-left: 55px;
+}

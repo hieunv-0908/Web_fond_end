@@ -1,0 +1,41 @@
+.articlenumber1 {
+    border-right: 1px solid rgb(205, 198, 198);
+    border-top: 1px solid rgb(205, 196, 196);
+    width: 25%;
+    text-align: center;
+
+
+}
+
+.buttonFullStory {
+    background-color: white;
+    height: 25px;
+    padding: 5px;
+
+}
+
+.Articleinformationone {
+    text-align: start;
+}
+
+.position {
+    position: relative;
+    bottom: 370px;
+    left: 380px;
+}
+
+.articlenumber2 {
+    border-right: 2px solid rgb(0, 0, 0);
+    border-top: 1px solid rgb(209, 195, 195);
+    width: 25%;
+    text-align: center;
+
+}
+.img{
+    height: 180px;
+    width: 300px;
+    position: relative;
+    bottom: 10px;
+}
+
+

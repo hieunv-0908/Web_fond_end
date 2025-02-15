@@ -1,0 +1,87 @@
+.backgroundBiggest {
+    background-color: rgb(251, 251, 251);
+}
+
+.header {
+    text-align: center;
+
+}
+
+
+.header h2 {
+    color: rgb(193, 187, 175);
+}
+
+.headerSpan {
+    color: rgb(191, 224, 245);
+    width: 30%;
+    margin-left: 35%;
+
+}
+
+.hr {
+    margin-top: 50px;
+    width: 30px;
+}
+
+.button{
+    text-align: center;
+    margin-top: 50px;
+    padding-bottom: 30px;
+}
+
+.dowload{
+    position: relative;
+
+}
+
+.buttonDowload{
+    border-radius: 5px;
+    height: 40px;
+    width: 8%;
+    background-color: #4696E5;
+    color: white;
+    border: none;
+    
+}
+
+.buttonLearnMore{
+    border-radius: 5px;
+    height: 40px;
+    width: 8%;
+    background-color: white;
+    color: black;
+    border: 1px solid #ECECEC;
+
+}
+
+.backgroundSmallest{
+    background-color: #F7F7F7;
+    border: 1px solid rgba(0, 0, 0, 0.047);
+}
+
+.imagin1{
+    width: 30px;
+    margin-left: 15px;
+}
+
+.imagin{
+    text-align: center;
+    padding: 80px;
+}
+
+.footerSpan{
+   
+    color: rgba(73, 70, 70, 0.523);
+    position: relative;
+    bottom: 50px;
+}
+
+.fotter{
+    text-align: center;
+}
+
+.link{
+    color: rgba(73, 70, 70, 0.523);
+}
+

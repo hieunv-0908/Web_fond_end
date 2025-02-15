@@ -1,0 +1,49 @@
+.background{
+    background-image: linear-gradient(to right, rgba(99, 86, 112, 1), rgba(99, 86, 112, 0.9)) ;
+    border: 2px solid ;
+    width: 100%;
+    height: 50%;
+    padding: 15px;
+    position: sticky;
+    
+}
+
+.label{
+    color: rgb(255, 255, 255);
+    display: block;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    font-family: sans-serif;
+    text-shadow: 0 0 3px;
+}
+
+.input{
+    border-radius: 5px;
+    background-color: rgba(255, 255, 255, 0);
+    border: 2px solid rgb(141, 140, 140);
+    height: 40px;
+    width: 40%;
+}
+
+.textarea{
+    border-radius: 10px;
+    background-color: rgba(255, 255, 255, 0);
+    border: 2px solid rgba(255, 255, 255, 0.26);
+    
+}
+
+.button{
+    border-radius: 5px;
+    margin-top: 5px;
+    background-color: rgb(255, 255, 255);
+    padding: 15px;
+    letter-spacing: 5px;
+    font-weight: 700;
+    color: rgb(48, 30, 65);
+}
+
+.email{
+    position: relative;
+    bottom: 75px;
+    left: 650px;
+}
