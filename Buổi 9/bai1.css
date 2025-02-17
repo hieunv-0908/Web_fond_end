@@ -1,0 +1,21 @@
+.element{
+    background-color: #3498DB;
+    height: 200px;
+    width: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    
+}
+
+.container{
+    border: 2px solid black;
+    background-color: azure;
+    height: 500px;
+    width: 500px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}

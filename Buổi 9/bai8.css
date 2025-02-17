@@ -1,0 +1,106 @@
+.container {
+    font-family: sans-serif;
+}
+
+.header {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    background-color: #333333;
+    color: white;
+    height: 80px;
+    align-items: center;
+}
+
+.main {
+    width: 100%;
+}
+
+.footer {
+    display: flex;
+    justify-content: space-evenly;
+    background-color: #333333;
+    color: white;
+    height: 50px;
+    align-items: center;
+    font-size: small;
+}
+
+.aHeader {
+    text-decoration: none;
+    color: white;
+}
+
+.containerA {
+    display: flex;
+    width: 15%;
+    font-size: small;
+    margin-right: 25px;
+    gap: 30px;
+}
+
+.portfolio{
+    font-size: xx-large;
+    font-weight: 700;
+}
+
+.mainHeader{
+    width: 100%;
+    background-color: whitesmoke;
+    display: flex;
+    flex-direction: column ;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.button{
+    margin-bottom: 40px;
+    margin-top: 20px;
+    background-color: #333333;
+    color: white;
+    border-radius: 5px;
+    height: 45px;
+    width: 150px;
+}
+
+.featured-work {
+    text-align: center;
+    padding: 40px 0;
+}
+
+.projects {
+    display: inline-block;
+    width: 100%;
+    text-align: center;
+}
+
+.project {
+    display: inline-block;
+    margin: 10px;
+    text-align: center;
+}
+
+.project-box {
+    width: 150px;
+    height: 150px;
+    background: #ccc;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 14px;
+    color: #666;
+}
+
+.about-me {
+    text-align: center;
+    padding: 40px;
+    background: #f8f8f8;
+}
+
+.footer {
+    text-align: center;
+    background: #333;
+    color: white;
+    padding: 20px;
+}

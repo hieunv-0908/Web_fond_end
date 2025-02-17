@@ -1,0 +1,48 @@
+.container {
+    font-family: sans-serif;
+}
+
+.header {
+    display: flex;
+    justify-content: space-evenly;
+    background-color: #333333;
+    color: white;
+    height: 50px;
+    align-items: center;
+}
+
+.main {
+    background-color: whitesmoke;
+    width: 35%;
+    margin-left: 17%;
+    margin-bottom: 20px;
+}
+
+.footer {
+    display: flex;
+    justify-content: space-evenly;
+    background-color: #333333;
+    color: white;
+    height: 50px;
+    align-items: center;
+    font-size: small;
+}
+
+.aHeader {
+    text-decoration: none;
+    color: white;
+    font-size: small;
+}
+
+.aMain {
+    text-decoration: none;
+    color: rgb(127, 136, 255);
+    display: flex;
+    margin-top: 20px;
+}
+
+.containerA {
+    display: flex;
+    width: 15%;
+    justify-content: space-between;
+}

@@ -1,0 +1,120 @@
+.container {
+    display: flex;
+    border: 2px solid black;
+    background-color: rgb(222, 216, 216);
+    justify-content: center;
+    align-items: center;
+    width: 550px;
+    height: 120px;
+    flex-wrap: wrap;
+    gap: 6px;
+}
+
+.element1 {
+    background-color: #2ECC71;
+    width: 120px;
+    height: 50px;
+    border-radius: 5px;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex: 1;
+
+}
+
+.element2 {
+    background-color: #2ECC71;
+    width: 120px;
+    height: 50px;
+    border-radius: 5px;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex: 1;
+
+}
+
+.element3 {
+    background-color: #2ECC71;
+    width: 120px;
+    height: 50px;
+    border-radius: 5px;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex: 1;
+
+}
+
+.element4 {
+    background-color: #2ECC71;
+    width: 120px;
+    height: 50px;
+    border-radius: 5px;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex: 1;
+
+}
+
+.element5 {
+    background-color: #2ECC71;
+    width: 120px;
+    height: 50px;
+    border-radius: 5px;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex: 2.1;
+
+}
+
+.element6 {
+    background-color: #2ECC71;
+    width: 120px;
+    height: 50px;
+    border-radius: 5px;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex: 1;
+
+
+}
+
+.element7 {
+    background-color: #2ECC71;
+    width: 120px;
+    height: 50px;
+    border-radius: 5px;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex: 1;
+
+
+}
+
+.container1 {
+    width: 95%;
+    display: flex;
+    justify-content: space-around;
+    justify-content: center;
+    gap: 10px;
+}
+
+.container2 {
+    width: 95%;
+    display: flex;
+    justify-content: space-around;
+    justify-content: center;
+    gap: 10px;
+}

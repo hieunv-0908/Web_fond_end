@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        .container{
+            background-color: pink;
+            height: 500px;
+            display: flex;
+            flex-direction: row;
+            justify-content:space-evenly;
+            
+
+        }
+        .container .item{
+            background-color: aquamarine;
+            margin: 1px;
+            height: 50px;
+        }
+    </style>
+</head>
+
+<!-- 
+Lưu ý 
+1.flex container:phần tử bố bao bọc phần tử con
+2.flex item:phần tử con
+- khi phần tử bố có display flex thì các phần tử con sẽ lằm trên cùng một hàng
+3.justifi-content: bám theo main axis(trục chính)
+
+
+-->
+<body>
+    <div class="container">
+        <div class="item">item1</div>
+        <div class="item">item2</div>
+        <div class="item">item3</div>
+        <div class="item">item4</div>
+        <div class="item">item5</div>
+    </div>
+</body>
+</html>

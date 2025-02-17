@@ -1,0 +1,65 @@
+.container {
+    display: flex;
+    gap: 10px;
+    flex-direction: column;
+    height: 450px;
+    width: 100%;
+}
+
+.top {
+    display: flex;
+    height: 200px;
+    width: 100%;
+    gap: 10px;
+}
+
+.bottom {
+    display: flex;
+    height: 200px;
+    width: 100%;
+    gap: 10px;
+}
+
+.containerBig {
+    background-color: #2C3E50;
+    color: white;
+    flex: 3;
+
+}
+
+.big {
+    display: flex;
+    justify-content: center;
+    padding-top: 20px;
+}
+
+.copntainerSmall {
+    color: white;
+    display: flex;
+    flex: 2;
+    flex-direction: column;
+    gap: 10px;
+
+}
+
+.containerSmall1 {
+    display: flex;
+    height: 50%;
+    gap: 10px;
+}
+
+.containerSmall2 {
+    display: flex;
+    height: 50%;
+    gap: 10px;
+}
+
+.span1 {
+        background-color: #2C3E50;
+    display: flex;
+    height: 100%;
+    width: 40%;
+    justify-content: center;
+    align-items: center;
+}
+

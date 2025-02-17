@@ -1,0 +1,41 @@
+.container {
+    display: flex;
+    width: 40%;
+    height: 130px;
+    flex-wrap: wrap;  
+}
+
+.container1{
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    padding-top: 15px;
+}
+
+.container2{
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+}
+
+.element1{
+    display: flex;  
+    background-color: #800080;
+    color: white;
+    border-radius: 5px;
+    width: 15%;
+    height: 50px;
+    justify-content: center;
+    align-items: center;
+}
+
+.element2 {
+    display: flex;
+    background-color: #800080;
+    color: white;
+    border-radius: 5px;
+    width: 15%;
+    height: 50px;
+    justify-content: center;
+    align-items: center;
+}
