@@ -1,0 +1,51 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+.container{
+}
+
+.containerHeader1{
+    display: flex;
+    flex-direction:column ;
+    gap: 10px;
+    background-color: #009BE5;
+    padding-top: 15px;
+}
+
+.navigation a{
+    text-decoration: none;
+    margin-left: 15px;
+    color: white;
+    font-weight: 100;
+    font-size: small;
+    font-family: sans-serif;
+}
+
+.authentication{
+    margin-left: 15px;
+    color: white;
+    font-family: sans-serif;
+}
+
+.Gotodocs{
+    color: white;
+    display: flex;
+    border: 1px solid;
+
+}
+
+.avata{
+    border-radius: 50%;
+    height: 25px;
+}
+
+.containerHeader2{
+    position: relative;
+    left: 80%;
+    bottom: 80px;
+    display: flex;
+    gap: 20px;
+    width: 300px;    
+}

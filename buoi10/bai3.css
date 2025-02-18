@@ -1,0 +1,49 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    width: 50%;
+}
+
+.button {
+   background-color: rgba(240, 248, 255, 0);
+   position: relative;
+   bottom: 320px;
+   left: 82%;
+   color: white;
+   border-radius: 3px;
+   border-color: white;
+   height: 40px;
+   width: 15%;
+
+}
+
+.container1{
+
+}
+
+.container2{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.container1 img {
+    border-radius: 5px;
+    height: 350px;
+    width: 100%;
+}
+
+.container2 img {
+    border-radius: 50%;
+    width: 5%;
+}
+
+.timeappears{
+    margin-top: 20px;
+    color: rgba(0, 0, 0, 0.408);
+}
+
+.footer p{
+    color: rgba(0, 0, 0, 0.408);
+}

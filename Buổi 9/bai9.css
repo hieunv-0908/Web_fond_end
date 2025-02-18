@@ -1,0 +1,53 @@
+.imaginFiren {
+    width: 70%;
+    height: 600px;
+    display: flex;
+    
+}
+
+.imaginNokotan {
+    flex: 1;
+    height: 300px;
+}
+
+.spanimagin1 {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    color: rgb(255, 255, 255);
+    position: relative;
+    bottom: 150px;
+    left: 50px;
+}
+
+.containerimaginRemaining {
+    display: flex;
+}
+
+.containerimaginRemaining{
+    display: flex;
+    gap: 28px;
+}
+
+.imaginButton{
+    border: 1px solid ;
+    width: 22%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-color: brown;
+    color: white;
+    gap: 10px;
+    font-size: small;
+    font-weight: 300;
+}
+
+.button{
+    background-color: white;
+    color:brown;
+    border-radius: 5px;
+    width: 90%;
+    height: 35px;
+}
+

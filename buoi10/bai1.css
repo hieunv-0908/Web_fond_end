@@ -1,0 +1,41 @@
+.container {
+    border: 1px solid;
+    background-color: #E5E5E5;
+    height: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.title {
+    font-family: "Grechen Fuemen", serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+.navigation .a{
+    text-decoration: none;
+    color: rgb(160, 157, 157);
+    font-family:sans-serif ;
+}
+
+.home{
+    color: black;
+    text-decoration: none;
+}
+
+.navigation{
+    display: flex;
+    justify-content: space-evenly;
+    width: 60%;
+    font-size: small;
+}
+
+.button{
+    width: 90px;
+    height: 35px;
+    border-radius: 5px;
+    border: none;
+    background-color: gray;
+}
