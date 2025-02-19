@@ -17,6 +17,7 @@ body {
 
 .slider-image {
     position: relative;
+<<<<<<< HEAD
 }
 
 .slider-image img {
@@ -31,6 +32,67 @@ body {
     left: 0;
     width: 100%;
     background: rgba(0, 0, 0, 0.6);
+    color: white;
+    padding: 20px;
+}
+
+.tag {
+    background: #333;
+    color: white;
+    padding: 5px 10px;
+    font-size: 14px;
+    border-radius: 5px;
+    position: absolute;
+    top: 10px;
+    left: 10px;
+}
+
+.headline {
+    font-size: 20px;
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+.description {
+    font-size: 14px;
+    margin-top: 5px;
+}
+
+.pagination {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 15px;
+    background: #fff;
+}
+
+.pagination button {
+    background: #ddd;
+    border: none;
+    padding: 8px 12px;
+    margin: 5px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.pagination .active {
+    background: black;
+=======
+}
+
+.slider-image img {
+    width: 100%;
+    display: block;
+    border-radius: 10px 10px 0 0;
+}
+
+.overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.6);
+>>>>>>> 58a35d1bbf71c2b047ce65c67544c6a43af1a359
     color: white;
     padding: 20px;
 }
