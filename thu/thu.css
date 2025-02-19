@@ -1,76 +1,80 @@
-* {
-    margin: 0;
-    padding: 0;
-}
-
-a {
-    margin-left: 15px;
-    color: white;
-    text-decoration: none;
-}
-
-.creter {
-    gap: 5px;
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f5f5f5;
     display: flex;
-    flex-direction: column;
-    background-color: white;
-}
-
-.heard {
-    display: flex;
-    justify-content:space-evenly;
-    font-size: 10px;
-    height: 30px;
-    width: 100%;
-    background-color: #333333;
-    display: flex;
-    align-items: center;
-    color: rgb(255, 255, 255);
-    text-decoration: none;
-
-}
-
-h2 {
-    left: 300px;
-}
-
-.boody {
-    margin-left: 200px;
-    background-color: rgb(244, 244, 244);
-    width: 600px;
-    height: 190px;
-    border-radius: 5px;
-}
-
-.p1 {
-    color: blue;
-}
-
-.boody_2 {
-    margin-left: 200px;
-    background-color: rgb(244, 244, 244);
-    width: 600px;
-    height: 300px;
-    border-radius: 5px;
-}
-
-.p2 {
-    color: rgb(140, 167, 188);
-    text-shadow: 0px;
-}
-
-.footer {
     justify-content: center;
     align-items: center;
-    border-radius: 5px;
-    margin-top: 10px;
-    font-size: 9px;
-    height: 30px;
-    width: 100%;
-    background-color: #333333;
-    display: flex;
-    align-items: center;
-    color: rgb(255, 255, 255);
-    text-decoration: none;
+    height: 100vh;
+}
 
+.slider {
+    width: 850px;
+    background: white;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.slider-image {
+    position: relative;
+}
+
+.slider-image img {
+    width: 100%;
+    display: block;
+    border-radius: 10px 10px 0 0;
+}
+
+.overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.6);
+    color: white;
+    padding: 20px;
+}
+
+.tag {
+    background: #333;
+    color: white;
+    padding: 5px 10px;
+    font-size: 14px;
+    border-radius: 5px;
+    position: absolute;
+    top: 10px;
+    left: 10px;
+}
+
+.headline {
+    font-size: 20px;
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+.description {
+    font-size: 14px;
+    margin-top: 5px;
+}
+
+.pagination {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 15px;
+    background: #fff;
+}
+
+.pagination button {
+    background: #ddd;
+    border: none;
+    padding: 8px 12px;
+    margin: 5px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.pagination .active {
+    background: black;
+    color: white;
 }

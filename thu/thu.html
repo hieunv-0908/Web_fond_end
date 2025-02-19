@@ -4,51 +4,29 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="./thu.css">
+    <title>News Slider</title>
+    <link rel="stylesheet" href="thu.css">
 </head>
 
 <body>
-    <div class="creter">
-        <div class="heard">
-            <h2> My BLoG</h2>
-            <div class="home">
-                <a href="Home">Home</a>
-                <a href="Home">About</a>
-                <a href="Home">Post</a>
-                <a href="Home">Contact</a>
+    <div class="slider-container">
+        <div class="news-card">
+            <img src="football.jpg" alt="Football News" class="news-image">
+            <div class="news-content">
+                <span class="news-tag">Football</span>
+                <p class="news-date">Agence France-Presse - 04 June 2023</p>
+                <h2 class="news-title">LIONEL MESSI LEAVING LIGUE 1 TEAM PARIS SAINT-GERMAIN, CLUB CONFIRMS</h2>
+                <p class="news-desc">The EuroLeague Finals Top Scorer is the individual award for the player that gained
+                    the highest points in the EuroLeague Finals</p>
             </div>
         </div>
-        <div>
-            <div class="boody">
-                <h2>Bài viết nổi bật</h2>
-                <br>
-                <h3>Tiêu đề bài viết chính</h3>
-                <br>
-                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Hic reprehenderit dolore libe</p>
-                <br>
-
-                <a class="p1">Đọc thêm</a>
-            </div>
-            <div class="boody_2">
-                <h2>Các bài viết khác</h2>
-                <br>
-                <h3>Bài viết 1</h3>
-                <br>
-                <p class="p2">Lorem ipsum dolor sit amet...</p>
-                <br>
-                <h3>Bài viết 2</h3>
-                <br>
-                <p class="p2">Ut nulla eu lorem tincidunt....</p>
-                <br>
-                <h3>Bài viết 3</h3>
-                <br>
-                <p class="p2"> Consectetur adipiscing elit.....</p>
-            </div>
-        </div>
-
-        <div class="footer">
-            <p> &copy; My Blog.All rights reserved</p>
+        <div class="pagination">
+            <button class="prev-btn">&#8592;</button>
+            <span class="page-number active">1</span>
+            <span class="page-number">2</span>
+            <span class="page-number">3</span>
+            <span class="page-number">4</span>
+            <button class="next-btn">&#8594;</button>
         </div>
     </div>
 </body>

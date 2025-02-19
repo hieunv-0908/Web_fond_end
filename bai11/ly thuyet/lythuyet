@@ -1,0 +1,14 @@
+- Reốpnsive: là kĩ thuật giúp giao diện trang we tương thích giưac các màn hình khác nhai mobile, table, destop,...
+
+1.breakpoin
+    tỉ lệ kích thước màn hình 
+    mobile: màn hình điện thoại: từ 320px-768px
+    tablet: màn hình máy tính bảng: 765px đến 1200px
+    desktop: màn hình máyb tính : >1200px
+
+2. mobile firt
+    -thiết kế giao diện ở trên màn hình điện thoại
+    -sau khi thiết kế giao diện ở màn hình điện thoại sau đó lên máy tính bảng và lớ hơn 
+
+3. desktop firt:
+    -thiết kế giao diện trên máy trước sau đó sẽ giảm xuống các màn hình nhỉ hơn.
