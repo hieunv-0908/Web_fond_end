@@ -1,0 +1,33 @@
+.container{
+    background-color: aqua;
+    border-radius: 10px;
+    width: 50%;
+    height: 500px;
+}
+
+
+.header{
+    height: 50px;
+    border-bottom: 2px solid;
+    width: 20%;
+}
+
+.input{
+    margin-top: 10px;
+
+}
+
+.button1{
+    border: none;
+    background-color: rgba(255, 255, 255, 0);
+    width: 100%; 
+    position: relative;
+    bottom: 49px;
+    display: flex;
+    flex-direction: row-reverse;
+}
+
+.button2 button{
+    margin-top: 20px;
+}
+

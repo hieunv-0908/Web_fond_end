@@ -1,0 +1,13 @@
+Bosststrap là thư viện UI giúp tạo các giao diện trang web nhanh chóng.
+
+
+cách dùng 
+
+1:lấy link về đặt tên class đúng với kiểu của bootstrap
+
+2:dowload bootstrap 
+
+ưu điểm: tạo thư viện nhanh và đã responsive 
+nhực điểm:
+    + phải nhớ tên class
+    + chứa cấc class dư thừa 

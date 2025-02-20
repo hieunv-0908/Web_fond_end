@@ -1,0 +1,14 @@
+.form-floating label{
+}
+
+.input_radio{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    width: 15%;
+    margin-top:10px ;
+}
+
+.container{
+    margin-left: 5px;
+}
