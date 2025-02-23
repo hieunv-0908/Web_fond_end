@@ -1,0 +1,40 @@
+.header {
+    width: 1440px;
+    height: 48px;
+    background-color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 231px;
+}
+
+.topHeader {
+    width: 1440px;
+    height: 48px;
+}
+
+.topHeader .topHeaderChild {
+    width: 859px;
+    height: 24px;
+    top: 12px;
+    left: 445px;
+    gap: 231px;
+}
+
+.topHeader .topHeaderChild div {
+    width: 550px;
+    height: 24px;
+    gap: 8px;
+}
+
+.topHeader .topHeaderChild div span {
+    width: 474px;
+    height: 18px;
+}
+
+.topHeader a {
+    color: white;
+    width: 78px;
+    height: 24px;
+    gap: 5px;
+}
