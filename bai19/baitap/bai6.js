@@ -1,5 +1,5 @@
 let a = +prompt("nhập a"), b = +prompt("nhập b"), c = +prompt("nhập c");
-let delta = (b * b) - 4 * a * c;;
+const delta = (b * b) - 4 * a * c;;
 let x, x1, x2;
 if (a == 0) {
     if (b == 0) {
