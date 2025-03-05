@@ -9,7 +9,7 @@ if (soTien % 1000 !== 0 || isNaN(soTien) || soTien <= 0) {
         var soTo = Math.floor(soTien / menhGia[i]); 
         if (soTo > 0) {
             document.write(menhGia[i].toLocaleString("vi-VN") + " - " + soTo + " tờ<br>");
-            soTien -= soTo * menhGia[i]; // Giảm số tiền đã rút
+            soTien -= soTo * menhGia[i];
         }
     }
 }
