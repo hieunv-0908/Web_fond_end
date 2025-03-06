@@ -2,31 +2,8 @@
 <html>
 
 <body>
-    <h3> The nested for loop in JavaScript</h3>
-    <p> Enter number of rows and columns to create matrix</p>
-    <form>
-        <label>Rows : </label>
-        <input type="text" id="rows"><br><br>
-        <label> Columns : </label>
-        <input type="text" id="cols"><br><br>
-        <input type="button" onclick="fun()" value="Create Matrix">
-    </form>
-    <br><br>
-    <div id="result"></div>
-    <script>
-        function fun() {
-            var text = "";
-            var rows = document.getElementById("rows").value;
-            var cols = document.getElementById("cols").value;
-            for (let i = 0; i < rows; i++) {
-                for (let j = 0; j < cols; j++) {
-                    text += "#"
-                }
-                text += "<br>";
-            }
-            document.getElementById("result").innerHTML = text;
-        }
-    </script>
+    
+    <script src="thu.js"></script>
 </body>
 
 </html>
