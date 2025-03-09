@@ -8,7 +8,7 @@ do {
                 alert("Số phần tử không hợp lệ!");
                 break;
             } else {
-                for (let i = 0; i <= n; i++) {
+                for (let i = 0; i < n; i++) {
                     arr[i] = prompt("Nhập vào phần tử thứ " + i + ":");
                 }
             }
