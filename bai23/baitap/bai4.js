@@ -7,7 +7,7 @@ if (n == 0) {
     alert("Số lượng kí tự nhập vào không hợp lệ.");
 } else {
     for (let i = 0; i < n; i++) {
-        arr[i] = prompt(`Mời bạn nhập vào phàn tử thứ ${i + 1}`);
+        arr[i] = prompt(`Mời bạn nhập vào phần tử thứ ${i + 1}`);
         if (arr[i].length == 1) {
             if (!isNaN(+arr[i])) {
                 arr_Number.push(arr[i]);
