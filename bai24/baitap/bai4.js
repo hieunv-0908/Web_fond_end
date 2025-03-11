@@ -89,13 +89,17 @@ do {
             if (array.length === 0) {
                 alert("Mảng chưa có dữ liệu!");
             } else {
-                array.reverse(); // Đảo ngược thứ tự các hàng
+                array.reverse(); 
                 let result = "Mảng sau khi đảo ngược hàng:\n";
                 for (let i = 0; i < array.length; i++) {
-                    result += array[i].join(" ") + "\n"; // Ghép hàng thành chuỗi
+                    result += array[i].join(" ") + "\n"; 
                 }
                 alert(result);
             }
+            break;
+        
+        case 7:
+
             break;
         default:
             alert("Lựa chon có lỗi vui lòng nhập lại.");
