@@ -10,3 +10,4 @@ function upper_case_firt(string) {
 }
 
 alert("Chuỗi sau khi viết hoa chữ cái đầu: " + upper_case_firt(string) + "");
+0.2

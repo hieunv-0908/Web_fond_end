@@ -8,22 +8,17 @@ function isEmail(email) {
     return false;
 }
 let users = [];
-let i = 0;
 do {
-    let flag = 1;
     let email = prompt("Nhập vào email đăng kí:");
     if (email == "end") {
         break;
     } else if (isEmail(email)) {
         if (users.includes(email)) {
             alert("Tài khoản đã được đăng kí.");
-            flag = 0;
             continue;
         }
         alert("Email hợp lệ.");
         users.push(email);
-        i++;
-
     } else {
         alert("Email không hợp lệ.");
     }
