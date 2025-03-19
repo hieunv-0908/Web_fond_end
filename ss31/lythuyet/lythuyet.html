@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        #content1{
+            color: blue;
+        }
+    </style>
+</head>
+<body>
+    <div class = "title">
+        Nội dung
+    </div>
+    <p >nội dung 1</p>
+    <p>nội dung 2</p>
+    <button onclick="button">click</button>
+
+
+
+    <script>
+        let p_element=document.getElementsByTagName("p");
+        p_element[0].id="content1";
+        console.log(p_element[1].classList.toggle);
+        console.log(p_element);
+        console.log(p_element[0]);
+        function button()  {
+            console.log("Click zoro!!!!!!!!!!!!!!!!1");
+            
+        }
+        
+    </script>
+</body>
+</html>

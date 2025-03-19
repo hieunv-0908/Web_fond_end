@@ -1,0 +1,38 @@
+
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Đăng nhập</title>
+</head>
+<body>
+
+    <div style="border: 1px solid black; padding: 20px; width: 250px;">
+        <label for="username">Username:</label>
+        <input type="text" id="username"><br><br>
+
+        <label for="password">Password:</label>
+        <input type="password" id="password"><br><br>
+
+        <button onclick="checkLogin()">Đăng nhập</button>
+    </div>
+
+    <script>
+        function checkLogin() {
+            const correctUsername = "huanrose@gmail.com";
+            const correctPassword = "123456";
+
+            let inputUsername = document.getElementById("username").value;
+            let inputPassword = document.getElementById("password").value;
+
+            if (inputUsername === correctUsername && inputPassword === correctPassword) {
+                console.log("Đăng nhập thành công");
+            } else {
+                console.log("Đăng nhập thất bại");
+            }
+        }
+    </script>
+
+</body>
+</html>

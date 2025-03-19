@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Danh sách nhân viên</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        h1 {
+            text-align: center;
+        }
+        table {
+            width: 50%;
+            margin: auto;
+            border-collapse: collapse;
+        }
+        th, td {
+            border: 1px solid black;
+            padding: 8px;
+            text-align: left;
+        }
+        th {
+            background-color: lightgray;
+        }
+        pre {
+            background-color: black;
+            color: white;
+            padding: 10px;
+            display: block;
+            width: 50%;
+            margin: auto;
+        }
+    </style>
+</head>
+<body>
+    <h1>Danh sách nhân viên</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>STT</th>
+                <th>NAME</th>
+                <th>AGE</th>
+                <th>ADDRESS</th>
+            </tr>
+        </thead>
+        <tbody id="employeeTable">
+        </tbody>
+    </table>
+    
+    <h3>Yêu cầu người dùng khai báo mảng đối tượng nhân viên</h3>
+    <pre>
+const employees = [
+    { id: 1, name: 'John', age: 18, address: 'New York' },
+    { id: 2, name: 'Mike', age: 22, address: 'Canada' },
+    { id: 3, name: 'Linda', age: 19, address: 'California' },
+    { id: 4, name: 'Peter', age: 25, address: 'London' },
+    { id: 5, name: 'Tony', age: 17, address: 'New York' }
+];
+    </pre>
+    
+    <script>
+        const employees = [
+            { id: 1, name: 'John', age: 18, address: 'New York' },
+            { id: 2, name: 'Mike', age: 22, address: 'Canada' },
+            { id: 3, name: 'Linda', age: 19, address: 'California' },
+            { id: 4, name: 'Peter', age: 25, address: 'London' },
+            { id: 5, name: 'Tony', age: 17, address: 'New York' }
+        ];
+
+        const tableBody = document.getElementById('employeeTable');
+        employees.forEach(emp => {
+            let row = `<tr>
+                <td>${emp.id}</td>
+                <td>${emp.name}</td>
+                <td>${emp.age}</td>
+                <td>${emp.address}</td>
+            </tr>`;
+            tableBody.innerHTML += row;
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      button {
+        height: 200;
+        width: 200;
+        border: solid 1px black;
+      }
+      .background_blue {
+        background-color: blue;
+      }
+      .background_red {
+        background-color: red;
+      }
+      .background_purple {
+        background-color: purple;
+      }
+
+      #button_blue {
+        background-color: blue;
+        border: solid 0.5px black;
+      }
+      #button_red {
+        background-color: red;
+        border: solid 0.5px black;
+      }
+      #button_purple {
+        background-color: purple;
+        border: solid 0.5px black;
+      }
+      
+      .div_button{
+        margin-left: 10px;
+        margin-bottom: 20px;
+      }
+    </style>
+  </head>
+  <body style="border: solid 1px black">
+    <p>change background-color</p>
+    <p>Mouse click</p>
+    <div class="div_button">
+      <button id="button_blue">xanh</button>
+      <button id="button_red">đỏ</button>
+      <button id="button_purple">tím</button>
+    </div>
+
+    <script>
+      let button_blue = document.getElementById("button_blue");
+      let button_red = document.getElementById("button_red");
+      let button_purple = document.getElementById("button_purple");
+      let body = document.body;
+      button_blue.addEventListener("click", () => {
+        body.classList.add("background_blue");
+        body.classList.remove("background_red");
+        body.classList.remove("background_purple");
+      });
+      button_red.addEventListener("click", () => {
+        body.classList.remove("background_blue");
+        body.classList.add("background_red");
+        body.classList.remove("background_purple");
+      });
+      button_purple.addEventListener("click", () => {
+        body.classList.remove("background_blue");
+        body.classList.remove("background_red");
+        body.classList.add("background_purple");
+      });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      body {
+        background-color: #999999;
+      }
+      #container_modal {
+        display: none;
+        background-color: white;
+        width: 30%;
+        height: 100px;
+        border-radius: 5px;
+        position: relative;
+        left: 15%;
+        top: 30px;
+        display: flex;
+        align-items: center;
+        padding-left: 20px;
+      }
+      #close_button {
+        position: absolute;
+        top: 15px;
+        left: 90%;
+        font-size: 20px;
+      }
+      #button{
+        background-color: #99999900;
+      }
+    </style>
+  </head>
+  <body>
+    <h2>Modal Example</h2>
+    <button id="button">Open Modal</button>
+    <div id="container_modal">
+      <span>Some text in the Modal</span>
+      <span id="close_button"> &#967;</span>
+    </div>
+
+    <script>
+      let button = document.getElementById("button");
+      let container_modal = document.getElementById("container_modal");
+      let close_button = document.getElementById("close_button");
+      let body = document.body;
+
+      button.addEventListener("click", () => {
+        container_modal.style.display = "flex";
+        body.style.backgroundColor = "gray";
+      });
+      close_button.addEventListener("click", () => {
+        container_modal.style.display = "none";
+        body.style.backgroundColor = "white";
+      });
+    </script>
+  </body>
+</html>

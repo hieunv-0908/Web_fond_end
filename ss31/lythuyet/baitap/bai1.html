@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .hidden {
+        visibility: hidden;
+      }
+    </style>
+  </head>
+  <body>
+    <h1 id="h1">This is a text</h1>
+    <button id="button1">Hide text</button>
+    <button id="button2">Show text</button>
+    <script>
+      let button1 = document.getElementById("button1");
+      console.log(button1);
+      let button2 = document.getElementById("button2");
+      console.log(button2);
+      let text = document.getElementById("h1");
+      console.log(text);
+
+      button1.addEventListener("click", () => {
+        // text.style.display = "none"; cách 1
+        text.classList.add("hidden"); // cách 2
+      });
+      button2.addEventListener("click", () => {
+        // text.style.display = "block"; cách 1
+        text.classList.remove("hidden"); // cách 2
+      });
+    </script>
+  </body>
+</html>
