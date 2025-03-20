@@ -14,7 +14,6 @@
             width: 100px;
             height: 100px;
             margin: 10px;
-            transition: all 0.3s ease;
         }
     </style>
 </head>
@@ -29,17 +28,17 @@
         let images = document.getElementsByClassName("img");
 
         function increase(event) {
-            event.stopPropagation(); // Ngăn không gọi `reduce()` khi bấm vào ảnh
+            event.stopPropagation(); 
             let img = event.target;
             let currentWidth = img.clientWidth;
             let currentHeight = img.clientHeight;
             img.style.width = (currentWidth + 20) + "px";
             img.style.height = (currentHeight + 20) + "px";
         }
-
+        
         function reduce() {
             for (let img of images) {
-                img.style.width = "100px"; // Reset về kích thước ban đầu
+                img.style.width = "100px"; 
                 img.style.height = "100px";
             }
         }
