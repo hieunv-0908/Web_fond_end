@@ -3,82 +3,72 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Danh sách nhân viên</title>
+    <title>Employee Table</title>
     <style>
-        body {
-            font-family: Arial, sans-serif;
-        }
-        h1 {
-            text-align: center;
-        }
-        table {
-            width: 50%;
-            margin: auto;
-            border-collapse: collapse;
-        }
-        th, td {
-            border: 1px solid black;
-            padding: 8px;
-            text-align: left;
-        }
-        th {
-            background-color: lightgray;
-        }
-        pre {
-            background-color: black;
-            color: white;
-            padding: 10px;
-            display: block;
-            width: 50%;
-            margin: auto;
-        }
+        table { width: 100%; border-collapse: collapse; margin-top: 20px; }
+        th, td { border: 1px solid black; padding: 8px; text-align: center; }
+        th { background-color: #f2f2f2; }
     </style>
 </head>
 <body>
-    <h1>Danh sách nhân viên</h1>
+    <h2>Employee Management</h2>
+    <label>Name: <input type="text" id="name"></label>
+    <label>Age: <input type="number" id="age"></label>
+    <label>Address: <input type="text" id="address"></label>
+    <button onclick="addEmployee()">Add Employee</button>
+    
     <table>
         <thead>
             <tr>
                 <th>STT</th>
-                <th>NAME</th>
-                <th>AGE</th>
-                <th>ADDRESS</th>
+                <th>Name</th>
+                <th>Age</th>
+                <th>Address</th>
             </tr>
         </thead>
-        <tbody id="employeeTable">
-        </tbody>
+        <tbody id="employeeTable"></tbody>
     </table>
-    
-    <h3>Yêu cầu người dùng khai báo mảng đối tượng nhân viên</h3>
-    <pre>
-const employees = [
-    { id: 1, name: 'John', age: 18, address: 'New York' },
-    { id: 2, name: 'Mike', age: 22, address: 'Canada' },
-    { id: 3, name: 'Linda', age: 19, address: 'California' },
-    { id: 4, name: 'Peter', age: 25, address: 'London' },
-    { id: 5, name: 'Tony', age: 17, address: 'New York' }
-];
-    </pre>
-    
-    <script>
-        const employees = [
-            { id: 1, name: 'John', age: 18, address: 'New York' },
-            { id: 2, name: 'Mike', age: 22, address: 'Canada' },
-            { id: 3, name: 'Linda', age: 19, address: 'California' },
-            { id: 4, name: 'Peter', age: 25, address: 'London' },
-            { id: 5, name: 'Tony', age: 17, address: 'New York' }
-        ];
 
-        const tableBody = document.getElementById('employeeTable');
-        employees.forEach(emp => {
-            let row = `<tr>
-                <td>${emp.id}</td>
-                <td>${emp.name}</td>
-                <td>${emp.age}</td>
-                <td>${emp.address}</td>
-            </tr>`;
-            tableBody.innerHTML += row;
-        });
+    <script>
+        let employees = [];
+
+        function addEmployee() {
+            let name = document.getElementById("name").value;
+            let age = document.getElementById("age").value;
+            let address = document.getElementById("address").value;
+            
+            if (name === "" || age === "" || address === "") {
+                alert("Please enter all fields");
+                return;
+            }
+            
+            let newEmployee = {
+                STT: employees.length + 1,
+                Name: name,
+                Age: age,
+                Address: address
+            };
+            
+            employees.push(newEmployee);
+            displayEmployees();
+            document.getElementById("name").value = "";
+            document.getElementById("age").value = "";
+            document.getElementById("address").value = "";
+        }
+
+        function displayEmployees() {
+            let tableBody = document.getElementById("employeeTable");
+            tableBody.innerHTML = "";
+            employees.forEach(emp => {
+                let row = `<tr>
+                    <td>${emp.STT}</td>
+                    <td>${emp.Name}</td>
+                    <td>${emp.Age}</td>
+                    <td>${emp.Address}</td>
+                </tr>`;
+                tableBody.innerHTML += row;
+            });
+        }
     </script>
 </body>
 </html>
