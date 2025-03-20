@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+    <style>
+      .container {
+        background-color: #999999;
+        width: 30%;
+        padding: 20px;
+        border-radius: 5px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .container2 {
+        background-color: white;
+        width: 100%;
+        padding: 10px;
+        border-radius: 5px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+
+      ul {
+        list-style: none;
+        padding: 0;
+        width: 100%;
+      }
+
+      li {
+        background-color: #f2f2f2;
+        margin: 5px 0;
+        padding: 10px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        border-radius: 5px;
+      }
+
+      button {
+        margin-left: 10px;
+        background-color: red;
+        color: white;
+        border: none;
+        padding: 5px 10px;
+        margin-top: 10px;
+        cursor: pointer;
+        border-radius: 3px;
+      }
+
+      button:hover {
+        background-color: darkred;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h2 id="title">To-Do List K24_PTIT</h2>
+      <div class="container2">
+        <div>
+          <input
+            type="text"
+            id="inputQuetion"
+            placeholder="Nhập vào nhiệm vụ...."
+          />
+          <button id="addQuetion" onclick="addQuetions()">Thêm</button>
+        </div>
+
+        <ul id="show_quetion"></ul>
+      </div>
+    </div>
+
+    <script>
+      let quetion = [];
+      let add_quetion = document.getElementById("addQuetion");
+      let span_show_quetion = document.getElementById("show_quetion");
+      function addQuetions() {
+        let input_quetion = document
+          .getElementById("inputQuetion")
+          .value.trim();
+        if (input_quetion === "") {
+          alert("Input không được trống!!");
+          return;
+        }
+        quetion.push(input_quetion);
+        document.getElementById("inputQuetion").value = "";
+        show_quetion();
+      }
+
+      function show_quetion() {
+        let str = "";
+        for (let i = 0; i < quetion.length; i++) {
+          str += `${quetion[i]}
+          <li><button onclick="delete_function(${i})">Xoá</button></li>
+          `;
+        }
+        span_show_quetion.innerHTML = str;
+      }
+
+      function delete_function(index) {
+        quetion.splice(index, 1);
+        show_quetion();
+      }
+    </script>
+  </body>
+</html>

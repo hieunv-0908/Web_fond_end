@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <button id="button" onclick="change_click_count()">Click me</button>
+    <span id="span_count"></span>
+    <script>
+      let count = 0;
+      let span_count = document.getElementById("span_count");
+      function change_click_count() {
+        let button = document.getElementById("button");
+        count++;
+        show();
+      }
+
+      function show() {
+        span_count.innerHTML = `Số lần click ${count}`;
+      }
+    </script>
+  </body>
+</html>

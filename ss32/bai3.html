@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <input type="text" id="input" placeholder="Nhập vào môn học" />
+    <button onclick="add_subject()">Submit</button>
+    <ul id="list_subject_show"></ul>
+
+    <script>
+      let list_subject = [];
+      let input = document.getElementById("input");
+      let list_subject_show = document.getElementById("list_subject_show");
+
+      function add_subject(){
+        let subject_temp;
+        subject_temp = document.getElementById("input").value.trim();
+        if(subject_temp==""){
+            alert("Không được nhập trống");
+            return;
+        }
+        list_subject.push(subject_temp);
+        show_list();
+        document.getElementById("input").value ="";
+        document.getElementById("input").value="";
+      }
+
+      function show_list() {
+        let str_subject="";
+        for (let i = 0; i < list_subject.length; i++) {
+          str_subject += `
+                <li>
+                ${list_subject[i]}
+                </li>
+                `;
+        }
+        document.getElementById("list_subject_show").innerHTML=str_subject;
+      }
+    </script>
+  </body>
+</html>

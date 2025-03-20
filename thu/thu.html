@@ -4,47 +4,54 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-    <style>
-        #p-test{
-            color: red;
-            
-            
-        }
-    </style>
+    <style></style>
   </head>
   <body>
-    <p id="p-test">
-            Lorem
-            ipsum dolor sit amet consectetur, adipisicing elit. Quo explicabo esse eos
-            dolores earum ipsa minima, totam ex in illo voluptate laborum enim
-            obcaecati deserunt neque, at adipisci excepturi ratione.
-    </p>
+    <input type="text" placeholder="Nhập công việc" id="input_job" />
+    <button id="add" onclick="add_job()">Thêm</button>
+    <ul id="show"></ul>
 
     <script>
-      let demo_p = document.getElementById("p-test");
-      demo_p.style.backgroundColor="black";
-      demo_p.style.fontSize="30px";
-      demo_p.style.fontFamily="";
+      let arr_job = [];
 
+      function add_job() {
+        let job_input = document.getElementById("input_job").value.trim();
+        let button_job = document.getElementById("add");
+        if(job_input===""){
+          return;
+        }
+        if (arr_job.length == 0) {
+          id = 1;
+        } else {
+          id = arr_job[arr_job.length - 1].id + 1;
+        }
+        let obj_temp = {
+          id: id,
+          name: job_input,
+        };
+        arr_job.push(obj_temp);
+        show_job();
+        document.getElementById(input_job).value = "";
+      }
 
-      
-    //   console.dir(demo_p);
-    //   console.log(demo_p.innerHTML);
-    //   console.log(demo_p.innerText);
-    //   console.log(demo_p.textContent);
-    //   demo_p.innerHTML = "<b><i>lorem ipsum</i></b>";
-    //   console.log(demo_p.innerHTML);
-    //   console.log(demo_p.innerText);
-    //   console.log(demo_p.textContent);
-    //   demo_p.innerText="<b><i>lorem ipsum</i></b>";
-    //   console.log(demo_p.innerHTML);
-    //   console.log(demo_p.innerText);
-    //   console.log(demo_p.textContent);
-    //   demo_p.textContent="<b><i>lorem ipsum</i></b>";
-    //   console.log(demo_p.innerHTML);
-    //   console.log(demo_p.innerText);
-    //   console.log(demo_p.textContent);
+      function show_job() {
+        let str = "";
+        for (let i = 0; i < arr_job.length; i++) {
+          str += ` 
+            <li> 
+            ${arr_job[i].name} 
+            <button onclick="delete_job(${i})"> Xoá </button>
+            <button onclick="edit_job()"> Sửa </button>                       
+            </li> `;
+        }
+        document.getElementById("show").innerHTML = str;
+      }
 
+      function delete_job(index) {
+        arr_job.splice(index,1);
+        show_job();
+      }
+      add_job();
     </script>
   </body>
 </html>

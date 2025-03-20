@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      #div1 {
+        width: 30%;
+        background-color: black;
+        height: 200px;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="div1">
+      <button id="button1" onclick="change_color()">Đổi màu nền</button>
+    </div>
+
+    <script>
+      function getRandomColor() {
+        let color = "#" + Math.floor(Math.random() * 16777215).toString(16);
+        return color;
+      }
+      function change_color() {
+        let div1 = document.getElementById("div1"); 
+        div1.style.backgroundColor  = getRandomColor();
+      }
+    </script>
+  </body>
+</html>

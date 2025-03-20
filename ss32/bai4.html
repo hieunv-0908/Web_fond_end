@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <input placeholder="Nhập email" type="email" id="input_email" />
+    <span id="validate"> </span>
+    <br />
+    <button id="button_check_email" onclick="check_email()">check</button>
+
+    <script>
+      
+      input_email.style.color = "pink";
+      let button_check_email = document.getElementById("button_check_email");
+      let validate_email = document.getElementById("validate");
+      function check_email() {
+        let input_email = document.getElementById("input_email").value;
+        if (input_email.includes("@")) {
+          if (input_email.endsWith(".com") || input_email.endsWith(".vn")) {
+            validate_email.innerHTML = "<p style='color:green'>Email Hợp Lệ</p>";
+          } else {
+            validate_email.innerHTML = "<p style='color:red'Email không hợp lệ></p>";
+          }
+        } else {
+          validate_email.innerHTML = "<p style='color:red'>Email không hợp lệ</p>";
+        }
+      }
+    </script>
+  </body>
+</html>
