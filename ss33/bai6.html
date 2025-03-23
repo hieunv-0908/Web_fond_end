@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .search-box input {
+        flex: 1;
+        padding: 8px;
+        border: 1px solid #ccc;
+        border-right: none;
+        border-radius: 4px 0 0 4px;
+        outline: none;
+      }
+
+      .search-box button {
+        padding: 8px 12px;
+        background-color: blue;
+        color: white;
+        border: 1px solid blue;
+        border-radius: 0 4px 4px 0;
+        cursor: pointer;
+      }
+
+      .container {
+        text-align: center;
+        background-color: #f0f8ff;
+      }
+
+      #more {
+        display: flex;
+        flex-direction: column;
+      }
+
+      #mores {
+        display: flex;
+        justify-content: center;
+      }
+
+      #show {
+        display: flex;
+        flex-direction: column;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h2 id="title">Ứng dụng thời tiết</h2>
+      <div class="search-box">
+        <input type="text" placeholder="Nhập từ khóa..." id="input" />
+        <button onclick="show_weather()">Tìm kiếm</button>
+      </div>
+      <div id="show"></div>
+    </div>
+
+    <script>
+      function show_weather() {
+        let show = document.getElementById("show");
+        let input_item = document.getElementById("input").value.trim();
+        let str = "";
+        for (let i = 0; i < weatherData.length; i++) {
+          if (input_item === weatherData[i].city) {
+            str += `<h3>${weatherData[i].city}</h3><div id="mores"><span id="icon">${weatherData[i].icon}</span><span>${weatherData[i].temperature}&deg;</span>C<div id="more"><span>${weatherData[i].description}</span><span>Độ ẩm:${weatherData[i].humidity}&#37;</span><span>Tốc độ gió:${weatherData[i].windSpeed} km/h</span></div></div>`;
+          }
+        }
+        show.innerHTML = str;
+      }
+      const weatherData = [
+        {
+          city: "Hà Nội",
+          temperature: 25,
+          humidity: 70,
+          windSpeed: 5,
+          description: "Có mây",
+          icon: "☁️",
+        },
+        {
+          city: "Hồ Chí Minh",
+          temperature: 32,
+          humidity: 75,
+          windSpeed: 7,
+          description: "Nắng",
+          icon: "☀️",
+        },
+        {
+          city: "Đà Nẵng",
+          temperature: 28,
+          humidity: 82,
+          windSpeed: 12,
+          description: "Mưa rào",
+          icon: "🌧️",
+        },
+      ];
+    </script>
+  </body>
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <textarea name="" id="text_area" placeholder="Nhập"></textarea>
+    <span id="show_text_area"></span>
+    <br />
+    <button id="button" onclick="show_quantity_characater()">check</button>
+
+    <script>
+      let button = document.getElementById("button");
+      function show_quantity_characater() {
+        let text_area = document.getElementById("text_area").value.trim();
+        if (text_area === "") {
+          alert("Không nhập gì cả.");
+          return;
+        }
+        let current_length_text_area = text_area.length;
+        let show_text_area = document.getElementById("show_text_area");
+        show_text_area.innerHTML = `<br/>Số lượng kí tự đã nhập là ${current_length_text_area}`;
+      }
+    </script>
+  </body>
+</html>

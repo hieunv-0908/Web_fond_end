@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+    <style>
+      .container {
+        position: relative;
+        display: flex;
+        align-items: center;
+      }
+      .container input {
+        height: 30px;
+        width: 15%;
+      }
+      .container i {
+        position: absolute;
+        left: 199px;
+      }
+    </style>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+      integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+  </head>
+  <body>
+    <div class="container">
+      <input id="input" type="password" />
+      <i
+        onclick="eye_clicks()"
+        class="fa-solid fa-eye"
+        id="eye"
+      ></i>
+      <script>
+        let container = document.getElementById("container");
+        let input = document.getElementById("input");
+        let eye_click = document.getElementById("eye");
+        function eye_clicks() {
+            eye_click.classList.toggle("fa-eye-slash");
+            eye_click.classList.toggle("fa-eye");
+            if(input.type==="password"){
+                input.type="text";
+            }else{
+                input.type="password";
+            }
+        }
+      </script>
+    </div>
+  </body>
+</html>

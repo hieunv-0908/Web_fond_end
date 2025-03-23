@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <select name="" id="dist_select">
+      <option value="">----- Lựa chọn danh mục -----</option>
+      <option value="Đồ ăn">Đồ ăn</option>
+      <option value="Nước">Nước</option>
+      <option value="Dụng cụ">Dụng cụ</option>
+    </select>
+    <ul id="show_list"></ul>
+    <button onclick="show_dist_category()">Lọc</button>
+
+    <script>
+      let dist = [
+        { name: "Rau sạch", category: "Đồ ăn" },
+        { name: "Thịt lợn", category: "Đồ ăn" },
+        { name: "Pepsi không calo", category: "Nước" },
+        { name: "Cocacola", category: "Nước" },
+        { name: "Cờ lê", category: "Dụng cụ" },
+        { name: "Tuy vít", category: "Dụng cụ" },
+      ];
+      function show_dist_category() {
+        let str = "";
+        let item_category = document.getElementById("dist_select").value.trim();
+        for (let i = 0; i < dist.length; i++) {
+          if (item_category === dist[i].category) {
+            str += `<li>${dist[i].name}</li>`;
+          }
+        }
+        let show_list = document.getElementById("show_list");
+        show_list.innerHTML = str;
+      }
+    </script>
+  </body>
+</html>

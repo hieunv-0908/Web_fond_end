@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      #container {
+        text-align: center;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="container">
+      <h2>To-Do List K24</h2>
+      <input id="input_job" type="text" placeholder="Nhập vào công việc" />
+      <button id="button_job" onclick="add_job()">Thêm</button>
+      <span id="show_job"></span>
+    </div>
+
+    <script>
+      let button_job = document.getElementById("button_job");
+      let list_job = [];
+      let show_jobs = document.getElementById("show_job");
+
+      function add_job() {
+        let input_job = document.getElementById("input_job").value.trim();
+        if (input_job === "") {
+          alert("Vui lòng nhập công việc");
+        } else {
+          list_job.push(input_job);
+          show_job();
+        }
+      }
+
+      function show_job() {
+        let job_temp = "";
+        for (let i = 0; i < list_job.length; i++) {
+          job_temp += `<br>${list_job[i]} <button onclick="edit_job(${i})"> Sửa </button> <button onclick="delete_job(${i})"> Xoá </button>`;
+        }
+        show_jobs.innerHTML = job_temp;
+      }
+
+      function edit_job(index) {
+        let select_edit =prompt("Mời nhập vào công việc cần thay đổi.");
+        list_job.splice(index,1,select_edit);
+        show_job();
+      }
+
+      function delete_job(index){
+        list_job.splice(index,1);
+        show_job();
+      }
+    </script>
+  </body>
+</html>
