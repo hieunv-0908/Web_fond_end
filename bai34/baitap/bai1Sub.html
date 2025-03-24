@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Đăng ký</title>
+    <link rel="stylesheet" href="bai3.html">
+  </head>
+  <body>
+    <label for="">Email</label><br />
+    <input type="email" placeholder="Email" id="email_input" /><br />
+    <label for="">UserName</label><br />
+    <input type="text" placeholder="UserName" id="name_input" /><br />
+    <label for="">Password</label><br />
+    <input type="password" placeholder="Pass" id="pass" /><br />
+    <label for="">Confirm pass</label><br />
+    <input type="password" placeholder="Confirm pass" id="confirm_pass" /><br />
+    <button onclick="check_sub()">SUB</button> <br>
+        <a href="bai3.html">Login</a>
+
+    <script>
+      let users = JSON.parse(localStorage.getItem("users")) || [];
+
+      function check_sub() {
+        let obj = {
+          email: document.getElementById("email_input").value.trim(),
+          name: document.getElementById("name_input").value.trim(),
+          pass: document.getElementById("pass").value.trim(),
+          confirm_pass: document.getElementById("confirm_pass").value.trim(),
+        };
+
+        const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+        if (!emailRegex.test(obj.email)) {
+          alert("Email không hợp lệ.");
+          return;
+        }
+
+        let check_email = users.find((item) => item.email === obj.email);
+        let check_name = users.find((item) => item.name === obj.name);
+
+        if (check_email) {
+          alert("Email đã tồn tại.");
+          return;
+        }
+        if (check_name) {
+          alert("Tên người dùng đã tồn tại.");
+          return;
+        }
+
+        if (obj.confirm_pass !== obj.pass) {
+          alert("Mật khẩu nhập lại không khớp.");
+          return;
+        }
+        users.push(obj);
+        localStorage.setItem("users", JSON.stringify(users));
+
+        alert("Đăng ký thành công!");
+      }
+    </script>
+  </body>
+</html>

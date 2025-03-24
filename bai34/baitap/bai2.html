@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bài 2</title>
+    <style>
+      body {
+        background-color: #f9f9f9;
+      }
+      #container_child {
+        background-color: white;
+        border-radius: 5px;
+        display: flex;
+        gap: 10px;
+        padding: 10px;
+      }
+      button {
+        border-radius: 5px;
+        color: white;
+        background-color: #007bff;
+        border: none;
+        padding: 5px 10px;
+        cursor: pointer;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="container">
+      <h1>Task Management</h1>
+      <div id="container_child">
+        <input type="text" placeholder="Content" id="content" />
+        <input type="date" id="date" />
+        <select id="status">
+          <option value="">Choose status</option>
+          <option value="pending">Pending</option>
+          <option value="completed">Completed</option>
+        </select>
+        <input type="text" placeholder="Username" id="username" />
+        <button onclick="add_task()" id="submitBtn">Submit</button>
+      </div>
+      <table id="table"></table>
+    </div>
+
+    <script>
+      let editIndex = -1;
+      let tasks = JSON.parse(localStorage.getItem("tasks")) || [];
+
+      function delete_task(index) {
+        tasks.splice(index, 1);
+        localStorage.setItem("tasks", JSON.stringify(tasks));
+        show();
+      }
+
+      function edit_task(index) {
+        let task = tasks[index];
+        document.getElementById("content").value = task.content;
+        document.getElementById("date").value = task.date;
+        document.getElementById("status").value = task.status;
+        document.getElementById("username").value = task.username;
+
+        editIndex = index;
+        document.getElementById("submitBtn").innerText = "Cập nhật";
+      }
+
+      function show() {
+        let str = `<tr><th>#</th><th>Content</th><th>Due date</th><th>Status</th><th>Assigned to</th><th>Action</th></tr>`;
+        let table = document.getElementById("table");
+        for (let i = 0; i < tasks.length; i++) {
+          str += `<tr>
+            <td>${i + 1}</td>
+            <td>${tasks[i].content}</td>
+            <td>${tasks[i].date}</td>
+            <td>${tasks[i].status}</td>
+            <td>${tasks[i].username}</td>
+            <td>
+              <button onclick="edit_task(${i})">Sửa</button>
+              <button onclick="delete_task(${i})">Xoá</button>
+            </td>
+          </tr>`;
+        }
+        table.innerHTML = str;
+      }
+
+      function add_task() {
+        let content = document.getElementById("content").value.trim();
+        let date = document.getElementById("date").value.trim();
+        let status = document.getElementById("status").value.trim();
+        let username = document.getElementById("username").value.trim();
+
+        if (!content || !date || !status || !username) {
+          alert("Nhập thông tin đầy đủ bạn nhé.");
+          return;
+        }
+
+        if (editIndex === -1) {
+          let task = { id: tasks.length + 1, content, date, status, username };
+          tasks.push(task);
+        } else {
+          tasks[editIndex] = { ...tasks[editIndex], content, date, status, username };
+          editIndex = -1;
+          document.getElementById("submitBtn").innerText = "Submit";
+        }
+
+        localStorage.setItem("tasks", JSON.stringify(tasks));
+        show();
+        resetForm();
+      }
+
+      function resetForm() {
+        document.getElementById("content").value = "";
+        document.getElementById("date").value = "";
+        document.getElementById("status").value = "";
+        document.getElementById("username").value = "";
+      }
+
+      show();
+    </script>
+  </body>
+</html>

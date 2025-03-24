@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="bai1Sub.html" />
+  </head>
+  <body>
+    <div>
+      <h2>Login</h2>
+      <label for="">Email</label><br />
+      <input type="email" placeholder="Nhập vào email" id="inputEmail" /><br />
+      <label for="">Password</label><br />
+      <input type="password" placeholder="Nhập vào pass" id="inputPass" /><br />
+      <button style="background-color: blue; color: white" onclick="login()">
+        Login</button
+      ><br />
+      <a style="text-decoration: none" href="">Forrgot pass</a
+      ><span style="color: red">or</span
+      ><a style="text-decoration: none" href="bai1Sub.html">SingUp</a>
+      <script>
+        function login() {
+          let users = JSON.parse(localStorage.getItem("users")) || [];
+          let inputEmail = document.getElementById("inputEmail").value.trim();
+          let inputPass = document.getElementById("inputPass").value.trim();
+          let check = -1;
+          if (users.length == 0) {
+            alert("Chưa có tài khoản nào trong lưu trữ cả.");
+            return;
+          }
+          for (let i = 0; i < users.length; i++) {
+            if (users[i].email === inputEmail && users[i].pass === inputPass) {
+              check = 1;
+              alert("đăng nhập thành công");
+              return;
+            }
+          }
+            alert("Mật khẩu hoặc tên đăng nhập sai");
+        }
+      </script>
+    </div>
+  </body>
+</html>
