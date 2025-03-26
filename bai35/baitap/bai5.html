@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quản lý danh mục</title>
+    <style>
+        body { font-family: Arial, sans-serif; text-align: center; }
+        table { width: 80%; margin: 20px auto; border-collapse: collapse; }
+        th, td { border: 1px solid black; padding: 8px; text-align: center; }
+        th { background-color: #f2f2f2; }
+        .modal { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.5); }
+        .modal-content { background: white; padding: 20px; width: 50%; margin: 10% auto; }
+        .error { color: red; font-size: 14px; }
+    </style>
+</head>
+<body>
+    <h2>Danh mục</h2>
+    <button onclick="openModal()">Thêm mới danh mục</button>
+    <table>
+        <thead>
+            <tr>
+                <th>Mã danh mục</th>
+                <th>Tên danh mục</th>
+                <th>Trạng thái</th>
+                <th>Hành động</th>
+            </tr>
+        </thead>
+        <tbody id="categoryTable"></tbody>
+    </table>
+    
+    <div class="modal" id="modal">
+        <div class="modal-content">
+            <h3>Thêm mới danh mục</h3>
+            <label>Mã danh mục:</label>
+            <input type="text" id="categoryId"><br>
+            <span class="error" id="idError"></span><br>
+            
+            <label>Tên danh mục:</label>
+            <input type="text" id="categoryName"><br>
+            <span class="error" id="nameError"></span><br>
+            
+            <label>Trạng thái:</label>
+            <select id="categoryStatus">
+                <option value="Hoạt động">Hoạt động</option>
+                <option value="Ngừng hoạt động">Ngừng hoạt động</option>
+            </select><br><br>
+            
+            <button onclick="addCategory()">Thêm</button>
+            <button onclick="closeModal()">Hủy</button>
+        </div>
+    </div>
+    
+    <script>
+        let categories = JSON.parse(localStorage.getItem("categories")) || [];
+
+        function openModal() { document.getElementById("modal").style.display = "block"; }
+        function closeModal() { document.getElementById("modal").style.display = "none"; }
+
+        function addCategory() {
+            let id = document.getElementById("categoryId").value.trim();
+            let name = document.getElementById("categoryName").value.trim();
+            let status = document.getElementById("categoryStatus").value;
+            let valid = true;
+
+            document.getElementById("idError").textContent = "";
+            document.getElementById("nameError").textContent = "";
+
+            if (!id) {
+                document.getElementById("idError").textContent = "Mã danh mục không được để trống!";
+                valid = false;
+            }
+            if (!name) {
+                document.getElementById("nameError").textContent = "Tên danh mục không được để trống!";
+                valid = false;
+            }
+
+            if (valid) {
+                categories.push({ id, name, status });
+                localStorage.setItem("categories", JSON.stringify(categories));
+                closeModal();
+                displayCategories();
+            }
+        }
+
+        function displayCategories() {
+            let table = document.getElementById("categoryTable");
+            table.innerHTML = "";
+            categories.forEach(cat => {
+                let row = `<tr>
+                    <td>${cat.id}</td>
+                    <td>${cat.name}</td>
+                    <td style="color: ${cat.status === 'Hoạt động' ? 'green' : 'red'}">${cat.status}</td>
+                    <td>✏️ 🗑️</td>
+                </tr>`;
+                table.innerHTML += row;
+            });
+        }
+
+        displayCategories();
+    </script>
+</body>
+</html>

@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      #table {
+        border: 1px solid black;
+        border-collapse: collapse;
+      }
+      #table02 {
+        border: 1px solid black;
+      }
+    </style>
+  </head>
+  <body>
+    <h2>Danh sách nhân viên Rikkei</h2>
+    <table id="table01">
+      <tr>
+        <td>
+          <label for="">Tên nhân viên.</label>
+          <input
+            type="text"
+            placeholder="Tên nhân viên."
+            id="input_name_staff"
+          />
+        </td>
+        <td>
+          <label for="">Chức vụ.</label>
+          <input type="text" placeholder="Chức vụ." id="input_position" />
+        </td>
+      </tr>
+    </table>
+    <table id="table"></table>
+    <button onclick="add_staff()" id="button">Thêm nhân viên</button>
+    <script>
+      let table = document.getElementById("table");
+      function add_staff() {
+        let list_staff = JSON.parse(localStorage.getItem("list_staff")) || [];
+        let name_staff = document
+          .getElementById("input_name_staff")
+          .value.trim();
+        let position = document.getElementById("input_position").value.trim();
+        let staff = {};
+        if (name_staff === "" || position === "") {
+          alert("Không được để trống.");
+          return;
+        }
+
+        if (list_staff.length === 0) {
+          staff = {
+            id: 1,
+            name: name_staff,
+            position: position,
+          };
+        } else {
+          let id_max = 0;
+          for (let j = 0; j < list_staff.length; j++) {
+            if (list_staff[j].id > id_max) {
+              id_max = list_staff[j].id;
+            }
+          }
+          staff = {
+            id: id_max + 1,
+            name: name_staff,
+            position: position,
+          };
+        }
+        document.getElementById("input_name_staff").value = "";
+        document.getElementById("input_position").value = "";
+        list_staff.push(staff);
+        localStorage.setItem("list_staff", JSON.stringify(list_staff));
+        show_staff();
+      }
+
+      function show_staff() {
+        let list_staff = JSON.parse(localStorage.getItem("list_staff")) || [];
+        let str = "<tr><th>STT</th><th>Tên</th><th>Chức vụ</th></tr>";
+        for (let i = 0; i < list_staff.length; i++) {
+          str += `<tr><td>${list_staff[i].id}</td><td>${list_staff[i].name}</td><td>${list_staff[i].position}</td></tr>`;
+        }
+        table.innerHTML = str;
+      }
+      show_staff();
+    </script>
+  </body>
+</html>

@@ -6,25 +6,58 @@
     <title>Document</title>
   </head>
   <style>
+    input{
+        border-radius: 5px;
+    }
+
+    body{
+        background-color: black;
+    }
     #image {
       width: 200px;
       height: 200px;
     }
     #show {
       display: flex;
+      margin-top: 20px;
+    }
+    img {
+      border-radius: 5px;
+      box-shadow: 5px 5px 5px 5px gray;
+    }
+    .div_img {
+      box-shadow: 5px 5px 5px #0D6EFD;
+      text-align: center;
+      color: white;
+    }
+    .button_buy {
+      background-color: #0d6efd;
+      color: white;
+      border-radius: 5px;
+      border: 1px solid white;
+    }
+    #button_show_all{
+        border-radius: 5px;
+        background-color: greenyellow;
+        color: white;
+    }
+    #button_search{
+        border-radius: 5px;
+        background-color: greenyellow;
+        color: white;
     }
   </style>
   <body>
     <input type="text" id="input_search" />
-    <button onclick="show_all_products()">ShowAll</button>
-    <button onclick="show_search()">Search</button>
+    <button onclick="show_all_products()" id="button_show_all">ShowAll</button>
+    <button onclick="show_search()" id="button_search">Search</button>
     <div id="show"></div>
     <script>
       function show_all_products() {
         let show = document.getElementById("show");
         let str = "";
         for (let i = 0; i < products.length; i++) {
-          str += `<div><img src="${products[i].image}" id="image"> </br> <p>${products[i].name}</p> </br> <p>${products[i].description}</p> </br></br> <p>${products[i].price}</p></br><button>Buy</button></div>`;
+          str += `<div class = "div_img"><img src="${products[i].image}" id="image"> </br> <p>${products[i].name}</p> </br> <p>${products[i].description}</p> </br></br> <p>${products[i].price}</p></br><button class="button_buy">Buy</button></div>`;
         }
         show.innerHTML = str;
       }
@@ -39,7 +72,8 @@
         for (let i = 0; i < products.length; i++) {
           let check_name = products[i].name.includes(input_search);
           if (check_name) {
-            str += `<div><img src="${products[i].image}" id="image"> </br> <p>${products[i].name}</p> </br> <p>${products[i].description}</p> </br></br> <p>${products[i].price}</p></br><button>Buy</button></div>`;
+            str += `
+            <div class="div_img"><img src="${products[i].image}" class="image"> </br> <p>${products[i].name}</p> </br> <p>${products[i].description}</p> </br></br> <p>${products[i].price}</p></br><button class="button_buy">Buy</button></div>`;
           }
         }
         show.innerHTML = str;

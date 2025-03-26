@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Danh sách nhân viên Rikkei</title>
+    <style>
+        body { font-family: Arial, sans-serif; text-align: center; }
+        table { width: 50%; margin: 20px auto; border-collapse: collapse; }
+        th, td { border: 1px solid black; padding: 8px; }
+        th { background-color: #f2f2f2; }
+        .pagination { margin-top: 10px; }
+        .pagination button { margin: 2px; padding: 5px; }
+    </style>
+</head>
+<body>
+    <h2>Danh sách nhân viên Rikkei</h2>
+    <input type="text" id="name" placeholder="Tên nhân viên">
+    <input type="text" id="position" placeholder="Chức vụ">
+    <button onclick="addEmployee()">Thêm nhân viên</button>
+    
+    <table>
+        <thead>
+            <tr>
+                <th>STT</th>
+                <th>Tên</th>
+                <th>Chức vụ</th>
+            </tr>
+        </thead>
+        <tbody id="employeeTable"></tbody>
+    </table>
+    
+    <div class="pagination" id="pagination"></div>
+
+    <script>
+        let employees = JSON.parse(localStorage.getItem("employees")) || [];
+        let currentPage = 1;
+        const recordsPerPage = 3;
+
+        function addEmployee() {
+            let name = document.getElementById("name").value;
+            let position = document.getElementById("position").value;
+            if (name && position) {
+                employees.push({ name, position });
+                localStorage.setItem("employees", JSON.stringify(employees));
+                document.getElementById("name").value = "";
+                document.getElementById("position").value = "";
+                displayEmployees();
+            } else {
+                alert("Vui lòng nhập đầy đủ thông tin!");
+            }
+        }
+
+        function displayEmployees() {
+            let table = document.getElementById("employeeTable");
+            table.innerHTML = "";
+            let start = (currentPage - 1) * recordsPerPage;
+            let end = start + recordsPerPage;
+            let paginatedItems = employees.slice(start, end);
+
+            paginatedItems.forEach((emp, index) => {
+                let row = `<tr>
+                    <td>${start + index + 1}</td>
+                    <td>${emp.name}</td>
+                    <td>${emp.position}</td>
+                </tr>`;
+                table.innerHTML += row;
+            });
+            setupPagination();
+        }
+
+        function setupPagination() {
+            let pagination = document.getElementById("pagination");
+            pagination.innerHTML = "";
+            let pageCount = Math.ceil(employees.length / recordsPerPage);
+            
+            for (let i = 1; i <= pageCount; i++) {
+                pagination.innerHTML += `<button onclick="changePage(${i})" ${i === currentPage ? 'style="background:#007BFF;color:white;"' : ''}>${i}</button>`;
+            }
+        }
+
+        function changePage(page) {
+            currentPage = page;
+            displayEmployees();
+        }
+
+        displayEmployees();
+    </script>
+</body>
+</html>

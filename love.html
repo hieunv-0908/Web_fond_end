@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Do you love me?</title>
+    <style>
+      body {
+        text-align: center;
+        font-family: Arial, sans-serif;
+        background-color: pink;
+      }
+
+      .container {
+        margin-top: 100px;
+        position: relative;
+      }
+
+      button {
+        padding: 10px 20px;
+        font-size: 18px;
+        margin: 10px;
+        border: none;
+        cursor: pointer;
+        border-radius: 20px;
+      }
+
+      #yesBtn {
+        background-color: #ff4d4d;
+        color: white;
+      }
+
+      #noBtn {
+        background-color: #666;
+        color: white;
+        position: absolute;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <img id="bearImage" src="https://i.pinimg.com/originals/e9/d8/d7/e9d8d7a965e6d79c96c00b89bb17d9a3.gif" alt="Bear" />
+      <h1>Do you love me?</h1>
+      <button id="yesBtn">Yes</button>
+      <button id="noBtn">No</button>
+    </div>
+
+    <script>
+      const noBtn = document.getElementById("noBtn");
+      const yesBtn = document.getElementById("yesBtn");
+      const bearImage = document.getElementById("bearImage");
+
+      noBtn.addEventListener("mouseover", () => {
+        const newX = Math.random() * (window.innerWidth - 100);
+        const newY = Math.random() * (window.innerHeight - 100);
+
+        noBtn.style.position = "absolute";
+        noBtn.style.left = `${newX}px`;
+        noBtn.style.top = `${newY}px`;
+      });
+
+      yesBtn.addEventListener("click", () => {
+        yesBtn.style.transition = "all 0.5s ease";
+        yesBtn.style.transform = "scale(1.5)";
+        yesBtn.style.backgroundColor = "red";
+        yesBtn.innerText = "❤️";
+
+        setTimeout(() => {
+          bearImage.src = "https://i.pinimg.com/originals/e9/d8/d7/e9d8d7a965e6d79c96c00b89bb17d9a3.gif";
+        }, 500);
+      });
+    </script>
+  </body>
+</html>

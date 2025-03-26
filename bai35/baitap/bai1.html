@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>To-Do list K24</h1>
+    <input type="text" placeholder="Nhập công việc" id="input_job" />
+    <button onclick="add_job()">Thêm</button>
+    <div id="show_jobs"></div>
+    <script>
+      let show_jobs_div = document.getElementById("show_jobs");
+      let job;
+      function add_job() {
+        let jobs = JSON.parse(localStorage.getItem("jobs")) || [];
+        let input_job = document.getElementById("input_job").value.trim();
+        if (input_job === "") {
+          alert("Không được để trống nhé.");
+          return;
+        }
+        if (jobs.length != 0) {
+          let id_max = 0;
+          for (let i = 0; i < jobs.length; i++) {
+            if (jobs[i].id > id_max) {
+              id_max = jobs[i].id;
+            }
+          }
+          job = {
+            id: id_max + 1,
+            job_name: input_job,
+          };
+        } else {
+          job = {
+            id: 1,
+            job_name: input_job,
+          };
+        }
+        jobs.push(job);
+        localStorage.setItem("jobs", JSON.stringify(jobs));
+        document.getElementById("input_job").value = "";
+        show_jobs();
+      }
+      function show_jobs() {
+        let jobs = JSON.parse(localStorage.getItem("jobs")) || [];
+        let str = "";
+        for (let i = 0; i < jobs.length; i++) {
+          str += `<div style="background-color : gray">${jobs[i].job_name}<button onclick="edit_job(${i})">Sửa</button><button onclick="delete_job(${i})">Xoá</button></div>`;
+        }
+        show_jobs_div.innerHTML = str;
+      }
+      show_jobs();
+      function edit_job(index) {
+        let select = confirm("Bạn có chắc chắn muốn thay đổi hay không");
+        let jobs = JSON.parse(localStorage.getItem("jobs")) || [];
+        if (select) {
+          jobs[index].job_name = prompt("Mời nhập vào thay đổi");
+        } else {
+          alert("Không có thay đổi j cả.");
+        }
+        localStorage.setItem("jobs", JSON.stringify(jobs));
+        show_jobs();
+      }
+      function delete_job(index) {
+        let jobs = JSON.parse(localStorage.getItem("jobs")) || [];
+        let result = confirm("Bạn có chắc chắn muốn xoá hay không.");
+        if (result) {
+          jobs.splice(index, 1);
+          localStorage.setItem("jobs", JSON.stringify(jobs));
+          show_jobs();
+        }else{
+            alert("Không có gì thay đổi");
+        }
+      }
+    </script>
+  </body>
+</html>
