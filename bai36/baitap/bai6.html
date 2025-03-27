@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Hệ thống đánh giá sản phẩm</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      body {
+        font-family: Arial, sans-serif;
+        text-align: center;
+        background-color: #f4f4f4;
+        margin: 20px;
+      }
+      .product {
+        background: white;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        display: inline-block;
+        width: 400px;
+      }
+      .stars {
+        font-size: 30px;
+        cursor: pointer;
+        color: #ddd;
+      }
+      .stars.active {
+        color: gold;
+      }
+      .comment-section {
+        margin-top: 20px;
+        text-align: left;
+      }
+      .comment-box {
+        width: 100%;
+        padding: 10px;
+        margin-top: 10px;
+      }
+      .comment-list {
+        margin-top: 10px;
+        padding: 0;
+        list-style: none;
+      }
+      .comment-list li {
+        background: #fff;
+        padding: 10px;
+        margin-top: 5px;
+        border-radius: 5px;
+        box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+      }
+      img {
+        width: 100%;
+        margin: 15px 0;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="product">
+      <h2>Sản phẩm: Tai nghe Bluetooth</h2>
+      <img src="https://imgs.search.brave.com/JRPdDRzOPxD2puv-eXZx8AiHMt7ySnUVRZs4uCbu7CI/rs:fit:860:0:0:0/g:ce/..." alt="Tai nghe Bluetooth" />
+      <p>Đánh giá sản phẩm:</p>
+      <div id="rating">
+        <span class="stars" data-value="1">★</span>
+        <span class="stars" data-value="2">★</span>
+        <span class="stars" data-value="3">★</span>
+        <span class="stars" data-value="4">★</span>
+        <span class="stars" data-value="5">★</span>
+      </div>
+      <p id="selected-rating">Bạn chưa đánh giá.</p>
+      <div class="comment-section">
+        <h3>Bình luận</h3>
+        <textarea id="comment-input" class="comment-box" placeholder="Nhập bình luận..."></textarea>
+        <button onclick="submitReview()">Gửi</button>
+        <ul id="comment-list" class="comment-list"></ul>
+      </div>
+    </div>
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        loadReviews();
+      });
+
+      document.querySelectorAll(".stars").forEach((star) => {
+        star.addEventListener("click", function () {
+          let rating = this.dataset.value;
+          localStorage.setItem("rating", rating);
+          document.querySelectorAll(".stars").forEach((s, index) => {
+            s.classList.toggle("active", index < rating);
+          });
+          document.getElementById("selected-rating").innerText = `Bạn đã đánh giá ${rating} sao.`;
+        });
+      });
+
+      function submitReview() {
+        let comment = document.getElementById("comment-input").value;
+        let rating = localStorage.getItem("rating") || 0;
+        if (comment.trim() === "") return;
+        let reviews = JSON.parse(localStorage.getItem("reviews")) || [];
+        reviews.push({ rating, comment });
+        localStorage.setItem("reviews", JSON.stringify(reviews));
+        loadReviews();
+        document.getElementById("comment-input").value = "";
+      }
+
+      function loadReviews() {
+        let reviews = JSON.parse(localStorage.getItem("reviews")) || [];
+        let commentList = document.getElementById("comment-list");
+        commentList.innerHTML = "";
+        reviews.forEach(({ rating, comment }) => {
+          let li = document.createElement("li");
+          li.innerHTML = `<span>${"★".repeat(rating)}</span> <b>${comment}</b>`;
+          commentList.appendChild(li);
+        });
+        let savedRating = localStorage.getItem("rating");
+        if (savedRating) {
+          document.querySelectorAll(".stars").forEach((s, index) => {
+            s.classList.toggle("active", index < savedRating);
+          });
+          document.getElementById("selected-rating").innerText = `Bạn đã đánh giá ${savedRating} sao.`;
+        }
+      }
+    </script>
+  </body>
+</html>

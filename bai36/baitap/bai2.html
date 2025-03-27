@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Khảo sát món ăn</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f8f8f8;
+      text-align: center;
+      margin: 20px;
+    }
+    .container {
+      max-width: 500px;
+      margin: auto;
+      background: white;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    }
+    h2 {
+      margin-bottom: 20px;
+    }
+    .food-item {
+      display: flex;
+      align-items: center;
+      background: #fff;
+      margin: 10px 0;
+      padding: 10px;
+      border-radius: 10px;
+      box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.1);
+    }
+    .food-item img {
+      width: 80px;
+      height: 80px;
+      border-radius: 8px;
+      object-fit: cover;
+      margin-right: 10px;
+    }
+    .food-info {
+      flex-grow: 1;
+      text-align: left;
+    }
+    .like-btn {
+      background-color: #28a745;
+      color: white;
+      border: none;
+      padding: 8px 12px;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    .like-btn:hover {
+      background-color: #218838;
+    }
+    .likes {
+      color: red;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h2>Bạn thích món nào nhất? 🍜</h2>
+    <div id="food-list"></div>
+  </div>
+
+  <script>
+    let dish = [
+      { name: "Bánh mì", img: "https://www.uniflour.vn/upload/images/HT%20T%E1%BB%88NH%202019/IMG_7714.JPG", like: 0 },
+      { name: "Phở bò Hà Nội", img: "https://sakos.vn/wp-content/uploads/2024/07/1658123252-cover_pho-1.jpg", like: 0 },
+      { name: "Cơm tấm Sài Gòn", img: "https://sakos.vn/wp-content/uploads/2024/09/bia.jpg", like: 0 }
+    ];
+
+    // Kiểm tra nếu có dữ liệu trong localStorage thì lấy ra
+    if (localStorage.getItem("dish_list")) {
+      dish = JSON.parse(localStorage.getItem("dish_list"));
+    }
+
+    function show_like() {
+      let foodList = document.getElementById("food-list");
+      foodList.innerHTML = ""; // Xóa nội dung cũ để cập nhật mới
+
+      dish.forEach((item, index) => {
+        let foodItem = document.createElement("div");
+        foodItem.classList.add("food-item");
+
+        foodItem.innerHTML = `
+          <img src="${item.img}" alt="${item.name}">
+          <div class="food-info">
+            <strong>${item.name}</strong>
+            <p class="likes" id="likes-${index}">❤️ ${item.like} lượt thích</p>
+            <button class="like-btn" data-index="${index}">Thích +1</button>
+          </div>
+        `;
+
+        foodList.appendChild(foodItem);
+      });
+
+      // Gán sự kiện click cho tất cả nút "Thích +1"
+      document.querySelectorAll(".like-btn").forEach((btn) => {
+        btn.addEventListener("click", (event) => {
+          let index = event.target.getAttribute("data-index");
+          change_like(index);
+        });
+      });
+    }
+
+    function change_like(index) {
+      dish[index].like += 1;
+      localStorage.setItem("dish_list", JSON.stringify(dish));
+      
+      // Cập nhật số lượt thích mà không render lại toàn bộ trang
+      document.getElementById(`likes-${index}`).innerText = `❤️ ${dish[index].like} lượt thích`;
+    }
+
+    show_like();
+  </script>
+</body>
+</html>

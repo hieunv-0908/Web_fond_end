@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #footer{
+            color: rgba(0, 0, 0, 0.368);
+        }
+
+        #button_red{
+            border:none;
+            border-radius: 5px;
+            width: 10%;
+            height: 50px;
+            color: white;
+            background-color: red;
+        }
+
+        #button_blue{
+            border: none;
+            border-radius: 5px;
+            width: 10%;
+            height: 50px;
+            color: white;
+            background-color: blue;
+        }
+
+        #button_yellow{
+            border: none;
+            border-radius: 5px;
+            width: 10%;
+            height: 50px;
+            color: white;
+            background-color: yellow;
+        }
+
+        #button_purple{
+            border: none;
+            border-radius: 5px;
+            width: 10%;
+            height: 50px;
+            color: white;
+            background-color: purple;
+        }
+
+        body{
+            text-align: center;
+            
+        }
+    </style>
+    
+</head>
+<body>
+    <h1>Chọn màu nền bạn yêu thích</h1>
+    <button id="button_red" onclick="change_color(1)">Đỏ</button>
+    <button id="button_blue" onclick="change_color(2)">Xanh</button>
+    <button id="button_yellow" onclick="change_color(3)">Vàng</button>
+    <button id="button_purple" onclick="change_color(4)">Tím</button>
+    <p id="footer">Trang sẽ ghi nhớ màu của bạn</p>
+
+    <script>
+        function change_color(background_color){
+            var color_favourite = localStorage.setItem("color_favourite",background_color);
+            let body = document.body;
+            if(background_color==1){
+                body.style.backgroundColor="red";
+            }else if(background_color==2){
+                body.style.backgroundColor="blue";
+            }else if(background_color==3){
+                body.style.backgroundColor="yellow";
+            }else if(background_color){
+                body.style.backgroundColor="purple";
+            }
+        }
+
+        function color_favourite_show(){
+            var color_favourite = localStorage.getItem("color_favourite");
+            let body = document.body;
+            if(color_favourite==1){
+                body.style.backgroundColor="red";
+            }else if(color_favourite==2){
+                body.style.backgroundColor="blue";
+            }else if(color_favourite==3){
+                body.style.backgroundColor="yellow";
+            }else if(color_favourite){
+                body.style.backgroundColor="purple";
+            }
+        }
+        color_favourite_show();
+    </script>
+</body>
+</html>
