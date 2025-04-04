@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Regist</title>
+    <link rel="stylesheet" href="../css/regist.css" />
+  </head>
+  <body>
+    <div id="container-wellcome">
+      <a href="../html/home.html"><h1>Wellcome to the website</h1></a>
+      <span>REKKEI EDUCATION</span>
+    </div>
+
+    <div id="container-sign_up">
+      <div id="in_container-sign_up">
+        <div id="container_name">
+          <div>
+            <input type="text" id="first_name" />
+            <br />
+            <label for="first_name" id="label_first_name">First name</label>
+          </div>
+          <div>
+            <!-- <span class="notification_name"></span> -->
+            <input type="text" id="last_name" />
+            <br />
+            <label for="last_name" id="label_last_name">Last name</label>
+          </div>
+        </div>
+
+        <!-- <br /> -->
+        <!-- <span class="notification_name"></span> -->
+        <input type="email" id="email_input" />
+        <!-- <br /> -->
+        <label for="email_input" id="label_email_input">Email address</label>
+        <!-- <br /> -->
+        <!-- <span class="notification_name"></span> -->
+        <input type="password" id="pass_input" />
+        <!-- <br /> -->
+        <label for="pass_input" id="label_pass_input">Password</label>
+        <!-- <br /> -->
+        <!-- <span class="notification_name"></span> -->
+        <input type="password" id="confirm_pass_input" />
+        <!-- <br /> -->
+        <label for="confirm_pass_input" id="label_confirm_pass_input"
+          >Confirm Password</label
+        >
+        <br />
+        <button id="button_sign_up" onclick="sign_up()">Sign up</button>
+        <span class="notification_name"></span>
+        <span id="have_an_account">Already have an account?</span>
+        <a href="../html/login.html" style="color: red" id="login">login</a>
+      </div>
+      <span id="tron"></span>
+    </div>
+    <span id="meo"></span>
+
+    <script src="../js/regist.js"></script>
+    <!-- <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script> -->
+  </body>
+</html>

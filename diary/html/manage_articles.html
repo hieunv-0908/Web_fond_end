@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Manage Articles</title>
+    <link rel="stylesheet" href="../css/manage_articles.css" />
+  </head>
+  <body>
+    <div class="sidebar">
+      <a href="../html/manage_users.html"><button>Manage Users</button></a>
+      <a href="../html/category_manage.html"><button>Manage Entries</button></a>
+      <a href="../html/manage_articles.html"><button>Manage Articles</button></a>
+      <button>Log out</button>
+    </div>
+
+    <div class="main-content">
+      <input class="search-bar" type="text" placeholder="Search Articles" />
+
+      <div class="article-list">
+        <h3>📋 Article List</h3>
+        <table>
+          <thead>
+            <tr>
+              <th>#</th>
+              <th>Title</th>
+              <th>Category</th>
+              <th>Actions</th>
+            </tr>
+          </thead>
+          <tbody id="article-table-body">
+            <tr>
+              <td>1</td>
+              <td>Introduction to JavaScript</td>
+              <td>Technology</td>
+              <td>
+                <button class="edit-btn">Edit</button>
+                <button class="delete-btn">Delete</button>
+              </td>
+            </tr>
+            <tr>
+              <td>2</td>
+              <td>Understanding AI</td>
+              <td>Science</td>
+              <td>
+                <button class="edit-btn">Edit</button>
+                <button class="delete-btn">Delete</button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="pagination">
+        <a href="#">← Previous</a>
+        <a href="#" class="active">1</a>
+        <a href="#">2</a>
+        <a href="#">3</a>
+        <a href="#">...</a>
+        <a href="#">9</a>
+        <a href="#">10</a>
+        <a href="#">Next →</a>
+      </div>
+    </div>
+  </body>
+</html>

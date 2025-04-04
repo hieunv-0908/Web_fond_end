@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Add Article</title>
+    <link rel="stylesheet" href="../css/add_article.css" />
+  </head>
+  <body>
+    <h2>📝 Add New Article</h2>
+    <div>
+      <label for="input_title">Title:</label>
+      <input type="text" id="input_title" />
+      <label for="article_category">Article Categories:</label>
+      <input type="text" id="article_category" />
+      <label for="mood">Modd:</label>
+      <input type="text" id="mood" />
+      <label for="content">Content:</label>
+      <input type="text" id="content" />
+      <label for="article_image">Article Image:</label>
+      <input type="file" id="article_image" accept="image/*" />
+      <img
+        id="preview_image"
+        src=""
+        alt="Image Preview"
+        style="display: none; max-width: 200px; margin-top: 10px"
+      />
+      <br />
+      <span>Status</span>
+      <label>
+        <input type="radio" class="status" value="public" name="status" />
+        public
+      </label>
+      <label>
+        <input type="radio" class="status" value="private" name="status" />
+        private
+      </label>
+      <button id="button_add">Add</button>
+      <a href="home.html">
+        <button id="button_home">Home</button>
+      </a>
+    </div>
+  </body>
+</html>

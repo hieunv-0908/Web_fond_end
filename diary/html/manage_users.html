@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Quản lý tài khoản</title>
+    <link rel="stylesheet" href="../css/manage_users.css" />
+  </head>
+  <body>
+    <div class="sidebar">
+      <a href="../html/manage_users.html"><button>Manage Users</button></a>
+      <a href="../html/category_manage.html"><button>Manage Entries</button></a>
+      <a href="../html/manage_articles.html"><button>Manage Articles</button></a>
+      <button>Log out</button>
+    </div>
+
+    <div class="main-content">
+      <div class="header">
+        <h2>👥 Quản lý tài khoản</h2>
+        <input
+          type="text"
+          id="search-user"
+          placeholder="🔍 Tìm kiếm người dùng"
+        />
+      </div>
+
+      <table>
+        <thead>
+          <tr>
+            <th>#</th>
+            <th>Tên <button id="sort-button">↕</button></th>
+            <th>Trạng thái</th>
+            <th>Email</th>
+            <th>Hành động</th>
+          </tr>
+        </thead>
+        <tbody id="user-table-body"></tbody>
+      </table>
+
+      <div class="pagination"></div>
+    </div>
+
+    <script src="../js/manage_users.js"></script>
+  </body>
+</html>
