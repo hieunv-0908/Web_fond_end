@@ -1,45 +1,51 @@
 <!DOCTYPE html>
-<html lang="vi">
+<html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Quản lý tài khoản</title>
-    <link rel="stylesheet" href="../css/manage_users.css" />
+    <title>Manage Articles</title>
+    <link rel="stylesheet" href="../css/users.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+      integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
   </head>
   <body>
+    <div id="header">
+      <i class="fa-regular fa-envelope"></i>
+      <i class="fa-regular fa-bell"></i>
+      <img src="" alt="">
+    </div>
     <div class="sidebar">
       <a href="../html/manage_users.html"><button>Manage Users</button></a>
       <a href="../html/category_manage.html"><button>Manage Entries</button></a>
-      <a href="../html/manage_articles.html"><button>Manage Articles</button></a>
+      <a href="../html/manage_articles.html"
+        ><button>Manage Articles</button></a
+      >
       <button>Log out</button>
     </div>
 
     <div class="main-content">
-      <div class="header">
-        <h2>👥 Quản lý tài khoản</h2>
-        <input
-          type="text"
-          id="search-user"
-          placeholder="🔍 Tìm kiếm người dùng"
-        />
+      <div>
+        <span>Team members</span>
       </div>
+      <input class="search-bar" type="text" placeholder="Search Articles" />
 
-      <table>
-        <thead>
-          <tr>
-            <th>#</th>
-            <th>Tên <button id="sort-button">↕</button></th>
-            <th>Trạng thái</th>
-            <th>Email</th>
-            <th>Hành động</th>
-          </tr>
-        </thead>
-        <tbody id="user-table-body"></tbody>
-      </table>
+      <div class="article-list"></div>
 
-      <div class="pagination"></div>
+      <div class="pagination">
+        <a href="#">← Previous</a>
+        <a href="#" class="active">1</a>
+        <a href="#">2</a>
+        <a href="#">3</a>
+        <a href="#">...</a>
+        <a href="#">9</a>
+        <a href="#">10</a>
+        <a href="#">Next →</a>
+      </div>
     </div>
-
-    <script src="../js/manage_users.js"></script>
   </body>
 </html>
