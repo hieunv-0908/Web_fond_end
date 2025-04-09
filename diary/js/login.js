@@ -1,7 +1,6 @@
 function login() {
   let emailElement = document.getElementById("input_email");
   let passElement = document.getElementById("input_pass");
-  // let notification = document.getElementById("notification");
 
   let users = JSON.parse(localStorage.getItem("users")) || [];
   let emailInput = emailElement.value.trim();
@@ -31,7 +30,7 @@ function login() {
   showNotification("Đăng nhập thành công!", "green");
 
   setTimeout(() => {
-    window.location.href = "home.html";
+    window.location.href = "manage_articles.html";
   }, 1000);
 }
 

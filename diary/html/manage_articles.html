@@ -4,63 +4,90 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Manage Articles</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+      integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
     <link rel="stylesheet" href="../css/manage_articles.css" />
   </head>
   <body>
-    <div class="sidebar">
-      <a href="../html/manage_users.html"><button>Manage Users</button></a>
-      <a href="../html/category_manage.html"><button>Manage Entries</button></a>
-      <a href="../html/manage_articles.html"><button>Manage Articles</button></a>
-      <button>Log out</button>
+    <div id="header">
+      <i class="fa-regular fa-bell" id="bell"></i>
+      <div style="position: relative; display: inline-block" id="message">
+        <i style="font-size: 20px" class="fa-regular fa-envelope"></i>
+        <span id="badge">2</span>
+      </div>
+      <img src="../assets/images/avatar_test.jfif" alt="" id="avatar_manage" />
     </div>
 
-    <div class="main-content">
-      <input class="search-bar" type="text" placeholder="Search Articles" />
+    <div id="container_main">
+      <div id="sidebar">
+        <a href="../html/manage_users.html">
+          <div id="button_manage_users">
+            <div id="child_button_manage_users">
+              <i class="fa-solid fa-users"></i>
+              <span id="span_manage_users">Manage Users</span>
+            </div>
+          </div>
+        </a>
 
-      <div class="article-list">
-        <h3>📋 Article List</h3>
-        <table>
-          <thead>
-            <tr>
-              <th>#</th>
-              <th>Title</th>
-              <th>Category</th>
-              <th>Actions</th>
-            </tr>
-          </thead>
-          <tbody id="article-table-body">
-            <tr>
-              <td>1</td>
-              <td>Introduction to JavaScript</td>
-              <td>Technology</td>
-              <td>
-                <button class="edit-btn">Edit</button>
-                <button class="delete-btn">Delete</button>
-              </td>
-            </tr>
-            <tr>
-              <td>2</td>
-              <td>Understanding AI</td>
-              <td>Science</td>
-              <td>
-                <button class="edit-btn">Edit</button>
-                <button class="delete-btn">Delete</button>
-              </td>
-            </tr>
-          </tbody>
-        </table>
+        <a href="../html/category_manage.html">
+          <div id="button_manage_entries">
+            <div id="child_button_manage_entries">
+              <i class="fa-solid fa-book"></i>
+              <span id="span_manage_entries">Manage entries</span>
+            </div>
+          </div>
+        </a>
+
+        <a href="../html/manage_articles.html">
+          <div id="button_manage_articles">
+            <div id="child_button_manage_articles">
+              <i class="fa-solid fa-book-open"></i>
+              <span id="span_manage_users">Manage articles</span>
+            </div>
+          </div>
+        </a>
+
+        <div id="button_logout">
+          <div id="child_button_logout">
+            <i class="fa-solid fa-right-from-bracket"></i>
+            <span id="span_manage_users">Log out</span>
+          </div>
+        </div>
       </div>
 
-      <div class="pagination">
-        <a href="#">← Previous</a>
+      <div id="container_main_manage_articles">
+        <h2 id="title_manage_article">Quản lý bài viết</h2>
+        <table>
+          <tr>
+            <th>Ảnh</th>
+            <th>Tiêu đề</th>
+            <th>Chủ đề</th>
+            <th>Nội dung</th>
+            <th>Trạng thái</th>
+            <th>Chỉnh sửa trạng thái</th>
+            <th>Hành động</th>
+          </tr>
+        </table>
+      </div>
+    </div>
+
+    <div id="pagination">
+      <a href="#" id="previous">← Previous</a>
+      <div id="page-numbers">
         <a href="#" class="active">1</a>
         <a href="#">2</a>
         <a href="#">3</a>
         <a href="#">...</a>
         <a href="#">9</a>
         <a href="#">10</a>
-        <a href="#">Next →</a>
       </div>
+      <a href="#" id="next">Next →</a>
     </div>
+    <script src="../js/manage_articles.js"></script>
   </body>
 </html>

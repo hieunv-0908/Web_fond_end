@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Edit Article</title>
+    <link rel="stylesheet" href="../css/add_article.css" />
+  </head>
+  <body>
+    <h2>✏ Chỉnh sửa bài viết</h2>
+    <div>
+      <label for="edit_title">Tiêu đề:</label>
+      <input type="text" id="edit_title" />
+
+      <label for="edit_category">Chủ đề:</label>
+      <input type="text" id="edit_category" />
+
+      <label for="edit_mood">Tâm trạng:</label>
+      <input type="text" id="edit_mood" />
+
+      <label for="edit_content">Nội dung:</label>
+      <textarea id="edit_content" rows="5"></textarea>
+
+      <label for="edit_image">Ảnh:</label>
+      <input type="file" id="edit_image" accept="image/*" />
+      <img
+        id="edit_preview"
+        style="display: none; max-width: 200px; margin-top: 10px"
+      />
+
+      <div>
+        <label
+          ><input type="radio" name="edit_status" value="public" />
+          Public</label
+        >
+        <label
+          ><input type="radio" name="edit_status" value="private" />
+          Private</label
+        >
+      </div>
+
+      <button onclick="saveEdit()">💾 Lưu bài viết</button>
+      <a href="manage_articles.html"><button>Quay lại</button></a>
+    </div>
+
+    <script src="../js/edit_article.js"></script>
+  </body>
+</html>

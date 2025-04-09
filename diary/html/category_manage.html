@@ -1,48 +1,95 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Manage Categories</title>
-    <link rel="stylesheet" href="../css/category_manage.css">
-</head>
-<body>
-    <div class="sidebar">
-        <a href="../html/manage_users.html"><button>Manage Users</button></a>
-        <a href="../html/category_manage.html"><button>Manage Entries</button></a>
-        <a href="../html/manage_articles.html"><button>Manage Articles</button></a>
-        <button>Log out</button>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+      integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="../css/category_manage.css" />
+  </head>
+  <body>
+    <div id="header">
+      <i class="fa-regular fa-bell" id="bell"></i>
+      <div style="position: relative; display: inline-block" id="message">
+        <i style="font-size: 20px" class="fa-regular fa-envelope"></i>
+        <span id="badge">2</span>
+      </div>
+      <img src="../assets/images/avatar_test.jfif" alt="" id="avatar_manage" />
     </div>
-    <div class="main-content">
-        <input class="search-bar" type="text" placeholder="Search Article Categories">
-        <div class="category-box">
-            <h2>📄 Manage Categories</h2>
-            <input type="text" placeholder="Enter category name">
-            <button>Add Category</button>
+
+    <a href="../html/manage_users.html">
+      <div id="button_manage_users">
+        <div id="child_button_manage_users">
+          <i class="fa-solid fa-users"></i>
+          <span id="span_manage_users">Manage Users</span>
         </div>
-        <div class="category-list">
-            <h3>📋 Category List</h3>
-            <table>
-                <tr>
-                    <th>#</th>
-                    <th>Category Name</th>
-                    <th>Actions</th>
-                </tr>
-                <tr>
-                    <td colspan="3" style="text-align: center; color: gray;">No categories available.</td>
-                </tr>
-            </table>
+      </div>
+    </a>
+
+    <a href="../html/category_manage.html">
+      <div id="button_manage_entries">
+        <div id="child_button_manage_entries">
+          <i class="fa-solid fa-book"></i>
+          <span id="span_manage_entries">Manage entries</span>
         </div>
-        <div class="pagination">
-            <a href="#">← Previous</a>
-            <a href="#" class="active">1</a>
-            <a href="#">2</a>
-            <a href="#">3</a>
-            <a href="#">...</a>
-            <a href="#">9</a>
-            <a href="#">10</a>
-            <a href="#">Next →</a>
+      </div>
+    </a>
+
+    <a href="../html/manage_articles.html">
+      <div id="button_manage_articles">
+        <div id="child_button_manage_articles">
+          <i class="fa-solid fa-book-open"></i>
+          <span id="span_manage_users">Manage articles</span>
         </div>
+      </div>
+    </a>
+
+    <div id="button_logout">
+      <div id="child_button_logout">
+        <i class="fa-solid fa-right-from-bracket"></i>
+        <span id="span_manage_users">Log out</span>
+      </div>
     </div>
-</body>
+
+    <div id="search_manage">
+      <label>
+        <div>
+          <i class="fa-solid fa-magnifying-glass"></i>
+          <span>Search</span>
+        </div>
+        <input type="text" id="input_search_manage" placeholder="Search..." />
+      </label>
+    </div>
+
+    <div id="add_category">
+      <div>
+        <h3>📂 Manage Categories</h3>
+        <label for="input_add_category_name" id="label_input_add_category_name"
+          >Category Name:</label
+        >
+        <input
+          type="text"
+          name="input_add_category_name"
+          id="input_add_category_name"
+          placeholder="Enter category name"
+        />
+        <button>Add Category</button>
+        <span>📋 Category List</span>
+        <table border="1">
+          <tr>
+            <th>#</th>
+            <th>Category Name</th>
+            <th>Actions</th>
+          </tr>
+        </table>
+      </div>
+    </div>
+    <script src="../js/category_manage.js"></script>
+  </body>
 </html>

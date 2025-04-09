@@ -74,3 +74,14 @@ body {
   color: #65676b;
   font-size: 0.9em;
 }
+
+#article_detail_container {
+  max-width: 800px;
+  margin: 40px auto;
+  padding: 24px;
+  background-color: #fff;
+  border-radius: 12px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  font-family: "Segoe UI", sans-serif;
+  line-height: 1.6;
+}
