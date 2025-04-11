@@ -12,7 +12,7 @@
       <label for="input_title">Title:</label>
       <input type="text" id="input_title" />
       <label for="article_category">Article Categories:</label>
-      <input type="text" id="article_category" />
+      <select name="" id="select_add_article"></select>
       <label for="mood">Modd:</label>
       <input type="text" id="mood" />
       <label for="content">Content:</label>
@@ -39,6 +39,10 @@
       <a href="home.html">
         <button id="button_home">Home</button>
       </a>
+    </div>
+    <div id="modal">
+      <span>Hãy điền đầy đủ thông tin.</span>
+      <button id="modal_button" onclick="click_button_modal()">OK</button>
     </div>
     <script src="../js/add_article.js"></script>
   </body>

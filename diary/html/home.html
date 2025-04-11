@@ -1,240 +1,148 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Home</title>
-    <link rel="stylesheet" href="../css/home.css" />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
-      integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
-      crossorigin="anonymous"
-      referrerpolicy="no-referrer"
-    />
-  </head>
-  <body>
-    <div id="header">
-      <i class="fa-solid fa-vector-square"></i>
-      <span>RIKKEI_EDU _BLOG</span>
-      <label>
-        <input
-          type="text"
-          id="input_search"
-          placeholder="Search for articles"
-        />
-        <i class="fa-solid fa-magnifying-glass"></i>
-      </label>
-
-      <!-- Thêm khu vực hiển thị trạng thái đăng nhập -->
-      <div id="user_status_container"></div>
-      <div id="user_dropdown_menu">
-        <div id="profile_section">
-          <img src="../assets/images/avata_admin_test.png" alt="User Avatar" />
-          <div id="profile_name_email">
-            <span id="profile_name">Rikkei</span>
-            <span id="profile_email">rikkei@gmail.com</span>
+  <!DOCTYPE html>
+  <html lang="en">
+    <head>
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>Home</title>
+      <link rel="stylesheet" href="../css/home.css" />
+      <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+        integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+        crossorigin="anonymous"
+        referrerpolicy="no-referrer"
+      />
+    </head>
+    <body>
+      <header id="header">
+        <i class="fa-solid fa-vector-square"></i>
+        <span>RIKKEI_EDU _BLOG</span>
+        <label>
+          <input
+            type="text"
+            id="input_search"
+            placeholder="Search for articles"
+          />
+          <i class="fa-solid fa-magnifying-glass"></i>
+        </label>
+        <div id="user_status_container"></div>
+        <div id="user_dropdown_menu">
+          <div id="profile_section">
+            <img src="../assets/images/avata_admin_test.png" alt="User Avatar" />
+            <div id="profile_name_email">
+              <span id="profile_name">Rikkei</span>
+              <span id="profile_email">rikkei@gmail.com</span>
+            </div>
           </div>
+          <span class="profile_option">View profile</span>
+          <span class="profile_option">Update profile picture</span>
+          <span class="profile_option">Change password</span>
+          <span id="profile_logout" onclick="toggle_modal_logout()">Logout</span>
         </div>
-        <span class="profile_option">View profile</span>
-        <span class="profile_option">Update profile picture</span>
-        <span class="profile_option">Change password</span>
-        <span id="profile_logout">Logout</span>
-      </div>
-    </div>
+      </header>
 
-    <div id="container_recent_blog_posts">
-      <div id="recent_blog_posts">
-        <h3 id="title_recent_blog_posts">Recent blog posts</h3>
-        <div class="article"></div>
+      <div id="modal_confirm_logout" class="hidden">
+        <button id="ok_logout" onclick="logout()">OK</button>
+        <button id="close_logout" onclick="toggle_modal_logout()">Close</button>
       </div>
 
-      <a href="../html/add_article.html" id="container_add_article">
-        <h2 id="add_article">ADD NEW ARTICLE</h2>
-        <i class="fa-brands fa-creative-commons-sampling-plus"></i>
-      </a>
-    </div>
-
-    <div id="container_all_blog_post">
-      <div id="all_blog_post_child">
-        <div id="container_line01_line02">
-          <div id="all_blog_title">
-            <b>All blog post</b>
-            <span>
-              Daily Journal Work & Career Personal ThoughtsEmotions & Feelings
-            </span>
+      <main>
+        <section id="container_recent_blog_posts">
+          <div id="recent_blog_posts">
+            <h3 id="title_recent_blog_posts">Recent blog posts</h3>
+            <div class="article" id="line_one"></div>
           </div>
 
-          <div id="line_one"></div>
-          <br />
-          <div id="line_two"></div>
-        </div>
-        <div id="pagination">
-          <button id="prev">← Previous</button>
-          <div id="page">
-            <button class="button_number_page">1</button>
-            <button class="button_number_page">2</button>
-            <button class="button_number_page">3</button>
-            <span>...</span>
-            <button class="button_number_page">8</button>
-            <button class="button_number_page">9</button>
-            <button class="button_number_page">10</button>
+          <a href="../html/add_article.html" id="container_add_article">
+            <h2 id="add_article">ADD NEW ARTICLE</h2>
+            <i class="fa-brands fa-creative-commons-sampling-plus"></i>
+          </a>
+        </section>
+
+        <section id="container_all_blog_post">
+          <div id="all_blog_post_child">
+            <div id="all_blog_title">
+              <div id="filter_categories">
+                <button id="clear_filter" style="margin-left: 10px;">Clear</button>
+              </div>
+            </div>
+
+            <div id="container_line01_line02">
+              <div id="line_one"></div>
+              <div id="line_two"></div>
+            </div>
+
+            <div id="pagination">
+              <button id="prev">&larr; Previous</button>
+              <div id="page">
+                <button class="button_number_page">1</button>
+                <button class="button_number_page">2</button>
+                <button class="button_number_page">3</button>
+                <span>...</span>
+                <button class="button_number_page">8</button>
+                <button class="button_number_page">9</button>
+                <button class="button_number_page">10</button>
+              </div>
+              <button id="next">Next &rarr;</button>
+            </div>
           </div>
-          <button id="next">Next →</button>
+        </section>
+      </main>
+
+      <footer>
+        <div id="footer">
+          <div>
+            <h2 id="title_footer">MY BLOG</h2>
+            <div id="fotter_01">
+              <span>About Rareblocks</span>
+              <p>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam
+                dictum aliquet accumsan porta lectus ridiculus in mattis.
+              </p>
+            </div>
+          </div>
+
+          <div id="fotter_02">
+            <span>Company</span>
+            <p>About<br />Features<br />Works<br />Career</p>
+          </div>
+
+          <div id="fotter_03">
+            <span>Help</span>
+            <p>
+              Customer Support<br />Delivery Details<br />Terms & Conditions<br />Privacy
+              Policy
+            </p>
+          </div>
+
+          <div id="fotter_04">
+            <span>Resources</span>
+            <p>
+              Free eBooks<br />Development Tutorial<br />How to - Blog<br />Youtube
+              Playlist
+            </p>
+          </div>
         </div>
-      </div>
-    </div>
-    <hr />
-    <div id="footer">
-      <h2 id="title_footer">MY BLOG</h2>
-      <div id="fotter_01">
-        <span>About Rareblocks</span>
-        <p>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam dictum
-          aliquet accumsan porta lectus ridiculus in mattis. Netus sodales in
-          volutpat ullamcorper amet adipiscing fermentum.
-        </p>
-      </div>
 
-      <div id="fotter_02">
-        <span>Company</span>
-        <pre>
-About         
-
-Features     
-
-Works   
-
-Career  
-        </pre>
-      </div>
-
-      <div id="fotter_03">
-        <span>Help</span>
-        <pre>
-Customer Support
-
-Delivery Details
-
-Terms & Conditions
-
-Privacy Policy
-        </pre>
-      </div>
-
-      <div id="fotter_04">
-        <span>Resources</span>
-        <pre>
-Free eBooks
-
-Development Tutorial
-
-How to - Blog
-
-Youtube Playlist
-          </pre
-        >
-      </div>
-    </div>
-    <div id="icon_footer">
-      <a
-        target="_blank"
-        style="
-          text-decoration: none;
-          font-size: 24px;
-          font-weight: bold;
-          background-image: linear-gradient(
-            to right,
-            red,
-            orange,
-            yellow,
-            green,
-            blue,
-            indigo,
-            violet
-          );
-          background-clip: text;
-          color: transparent;
-          display: inline-block;
-        "
-        href="https://communitynotes.x.com/guide/en/contributing/signing-up"
-      >
-        <i class="fa-brands fa-twitter"></i>
-      </a>
-      <a
-        target="_blank"
-        style="
-          text-decoration: none;
-          font-size: 24px;
-          font-weight: bold;
-          background-image: linear-gradient(
-            to right,
-            red,
-            orange,
-            yellow,
-            green,
-            blue,
-            indigo,
-            violet
-          );
-          background-clip: text;
-          color: transparent;
-          display: inline-block;
-        "
-        href="https://www.facebook.com/username"
-      >
-        <i class="fa-brands fa-facebook-f"></i>
-      </a>
-      <a
-        target="_blank"
-        style="
-          text-decoration: none;
-          font-size: 24px;
-          font-weight: bold;
-          background-image: linear-gradient(
-            to right,
-            red,
-            orange,
-            yellow,
-            green,
-            blue,
-            indigo,
-            violet
-          );
-          background-clip: text;
-          color: transparent;
-          display: inline-block;
-        "
-        href="https://www.instagram.com/username/"
-      >
-        <i class="fa-brands fa-instagram"></i>
-      </a>
-      <a
-        target="_blank"
-        style="
-          text-decoration: none;
-          font-size: 24px;
-          font-weight: bold;
-          background-image: linear-gradient(
-            to right,
-            red,
-            orange,
-            yellow,
-            green,
-            blue,
-            indigo,
-            violet
-          );
-          background-clip: text;
-          color: transparent;
-          display: inline-block;
-        "
-        href="https://github.com/username"
-      >
-        <i class="fa-brands fa-github"></i>
-      </a>
+        <div id="icon_footer">
+          <a
+            target="_blank"
+            href="https://communitynotes.x.com/guide/en/contributing/signing-up"
+          >
+            <i class="fa-brands fa-twitter"></i>
+          </a>
+          <a target="_blank" href="https://www.facebook.com/username">
+            <i class="fa-brands fa-facebook-f"></i>
+          </a>
+          <a target="_blank" href="https://www.instagram.com/username/">
+            <i class="fa-brands fa-instagram"></i>
+          </a>
+          <a target="_blank" href="https://github.com/username">
+            <i class="fa-brands fa-github"></i>
+          </a>
+        </div>
+      </footer>
 
       <script src="../js/home.js"></script>
-    </div>
-  </body>
-</html>
+    </body>
+  </html>

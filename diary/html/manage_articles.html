@@ -20,7 +20,11 @@
         <i style="font-size: 20px" class="fa-regular fa-envelope"></i>
         <span id="badge">2</span>
       </div>
-      <img src="../assets/images/avatar_test.jfif" alt="" id="avatar_manage" />
+      <img
+        src="../assets/images/avatar_test.jfif"
+        alt="User avatar"
+        id="avatar_manage"
+      />
     </div>
 
     <div id="container_main">
@@ -45,7 +49,7 @@
 
         <a href="../html/manage_articles.html">
           <div id="button_manage_articles">
-            <div id="child_button_manage_articles">
+            <div id="child_button_manage_articles" class="active">
               <i class="fa-solid fa-book-open"></i>
               <span id="span_manage_users">Manage articles</span>
             </div>
@@ -61,17 +65,23 @@
       </div>
 
       <div id="container_main_manage_articles">
+        <button id="add_article_manage">Thêm bài viết</button>
+
         <h2 id="title_manage_article">Quản lý bài viết</h2>
-        <table>
-          <tr>
-            <th>Ảnh</th>
-            <th>Tiêu đề</th>
-            <th>Chủ đề</th>
-            <th>Nội dung</th>
-            <th>Trạng thái</th>
-            <th>Chỉnh sửa trạng thái</th>
-            <th>Hành động</th>
-          </tr>
+        <table id="table_articles">
+          <thead>
+            <tr>
+              <th>Ảnh</th>
+              <th>Tiêu đề</th>
+              <th>Chủ đề</th>
+              <th>Nội dung</th>
+              <th>Trạng thái</th>
+              <th>Chỉnh sửa trạng thái</th>
+              <th>Hành động</th>
+            </tr>
+          </thead>
+          <tbody id="article-table-body">
+          </tbody>
         </table>
       </div>
     </div>
@@ -88,6 +98,53 @@
       </div>
       <a href="#" id="next">Next →</a>
     </div>
+
+    <div id="articleModal" class="modal hidden">
+      <div class="modal-content">
+        <span class="close-button">&times;</span>
+        <h3 id="modal-title">Sửa bài viết</h3>
+        <form id="articleForm">
+          <br />
+          <label>Tiêu đề:</label>
+          <input type="text" id="modal-title-input" required />
+          <br />
+          <label>Chủ đề:</label>
+          <select name="" id="select_category"></select>
+          <br />
+          <label>Ảnh (Upload):</label>
+          <input type="file" id="modal-image-input" accept="image/*" />
+          <br />
+          <label>Nội dung:</label>
+          <textarea id="modal-content-input" rows="4"></textarea>
+          <br />
+          <label>Trạng thái:</label>
+          <select id="modal-status-input">
+            <option value="public">Public</option>
+            <option value="private">Private</option>
+          </select>
+
+          <input type="hidden" id="modal-article-id" />
+          <button type="submit" id="submit_modal" onclick="">Lưu</button>
+        </form>
+      </div>
+    </div>
+    <div class="modal-delete-content hidden" id="deleteConfirmBox">
+      <p id="deleteConfirmText">Bạn có chắc chắn muốn xoá bài viết này?</p>
+      <div
+        style="
+          display: flex;
+          justify-content: center;
+          gap: 10px;
+          margin-top: 15px;
+        "
+      >
+        <button id="confirmDeleteBtn" class="confirm-btn" onclick="">
+          Xoá
+        </button>
+        <button id="cancelDeleteBtn" class="cancel-btn">Huỷ</button>
+      </div>
+    </div>
+
     <script src="../js/manage_articles.js"></script>
   </body>
 </html>

@@ -29,6 +29,7 @@ function login() {
 
   showNotification("Đăng nhập thành công!", "green");
 
+  
   setTimeout(() => {
     window.location.href = "manage_articles.html";
   }, 1000);

@@ -83,3 +83,38 @@ input[type="radio"] {
   cursor: pointer;
   margin-top: 10px;
 }
+
+#modal{
+  background-color: gray;
+  color: white;
+  width: 20%;
+  /* text-align: center; */
+  align-items: center;
+  border-radius: 5px;
+  display: none;
+  flex-direction: column;
+  position: relative;
+  bottom: 500px;
+  left: 40%;
+}
+
+#modal button{
+  width: 30%;
+  height: 50px;
+  background-color: green;
+  color: white;
+  text-align: center;
+  border: none;
+  border-radius: 5px;
+}
+
+#modal button:hover{
+  width: 30%;
+  height: 50px;
+  transition: background-color 1s;
+  background-color: white;
+  color: black;
+  text-align: center;
+  border: none;
+  border-radius: 5px;
+}

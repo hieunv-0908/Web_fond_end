@@ -404,11 +404,15 @@ a {
 }
 
 #pagination {
+  width: 890px;
   margin-top: 20px;
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
   gap: 12px;
+  /* border: 1px solid; */
+  position: relative;
+  left: 16.9%;
 }
 
 #pagination a {
@@ -479,4 +483,31 @@ a {
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+.btn-delete {
+  color: red;
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 14px;
+}
+.btn-delete:hover {
+  text-decoration: underline;
+}
+
+#button_block {
+  width: 50px;
+  background-color: #af9ed892;
+  color: #6941c6;
+  border: none;
+  border-radius: 30px;
+}
+
+#button_unlock {
+  width: 50px;
+  background-color: #5c83c694;
+  color: #175cd3;
+  border: none;
+  border-radius: 30px;
 }

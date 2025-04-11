@@ -8,6 +8,11 @@ body {
   background-color: #fafafb;
 }
 
+#main {
+  margin-left: 100px;
+  padding: 20px;
+}
+
 #header {
   width: 100%;
   height: 55.391578674316406px;
@@ -251,7 +256,7 @@ body {
   text-align: center;
 }
 
-#search_manage {
+#search_manage_category {
   width: 602.5985107421875px;
   height: 66.21356201171875px;
   position: absolute;
@@ -263,7 +268,7 @@ body {
   align-items: center;
 }
 
-#search_manage div {
+#search_manage_category div {
   width: 300.8093566894531px;
   height: 66.21356201171875px;
   padding-top: 19.6px;
@@ -276,13 +281,13 @@ body {
   gap: 15.68px;
 }
 
-#search_manage label {
+#search_manage_category label {
   display: flex;
   justify-items: center;
   align-items: center;
 }
 
-#search_manage input {
+#search_manage_category input {
   width: 99%;
   height: 27.435380935668945px;
   display: flex;
@@ -306,8 +311,10 @@ body {
 }
 
 #add_category div {
-  width: 1006px;
-  height: 310px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  padding: 20px;
   /* border: 1px solid; */
 }
 
@@ -315,7 +322,8 @@ body {
   width: 100%;
   height: 27px;
   position: absolute;
-  top: 39.91px;
+  top: 10px;
+  /* bottom: 5px; */
   left: 385.25px;
   font-family: Arial;
   display: flex;
@@ -348,15 +356,15 @@ body {
 }
 
 #add_category div button {
-  width: 950px;
+  width: 100px;
   height: 35px;
   position: absolute;
   top: 157.91px;
   left: 20px;
   border-radius: 5px;
-  background-color: #28a745;
+  /* background-color: #28a745; */
   border: none;
-  color: white;
+  color: blue;
   font-family: Arial;
   font-weight: 400;
   font-size: 13.3px;
@@ -379,6 +387,13 @@ body {
   letter-spacing: 0%;
   vertical-align: middle;
   color: #000000;
+}
+
+#add_category div label,
+#add_category div input,
+#add_category div button,
+#add_category div span {
+  position: static !important; /* bỏ thuộc tính absolute */
 }
 
 #add_category div table {
@@ -433,6 +448,107 @@ body {
   background-color: #f0f0ff;
 }
 
-a{
-    text-decoration: none;
+a {
+  text-decoration: none;
+}
+
+#table_category td {
+  text-align: center;
+  vertical-align: middle;
+}
+
+#table_category button {
+  border: none;
+  background-color: #eee;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: 0.2s;
+}
+
+#table_category button:hover {
+  background-color: #ccc;
+}
+
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 999;
+  transition: opacity 0.3s ease;
+}
+
+.modal-content {
+  background-color: #fff;
+  padding: 24px;
+  border-radius: 8px;
+  width: 300px;
+  max-width: 90%;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+  animation: slideDown 0.3s ease;
+  text-align: center;
+}
+
+@keyframes slideDown {
+  from {
+    transform: translateY(-30px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.modal-content p,
+.modal-content label {
+  font-size: 16px;
+  margin-bottom: 12px;
+  display: block;
+}
+
+.modal-content input {
+  width: 100%;
+  padding: 6px 10px;
+  margin-bottom: 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.modal-content button {
+  margin: 4px;
+  padding: 8px 16px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background 0.2s ease;
+}
+
+#confirm_delete_btn {
+  background-color: #e74c3c;
+  color: white;
+}
+
+#confirm_delete_btn:hover {
+  background-color: #c0392b;
+}
+
+.modal-content button:not(#confirm_delete_btn) {
+  background-color: #ccc;
+  color: #333;
+}
+
+.modal-content button:not(#confirm_delete_btn):hover {
+  background-color: #b0b0b0;
+}
+
+.hidden {
+  display: none;
 }
