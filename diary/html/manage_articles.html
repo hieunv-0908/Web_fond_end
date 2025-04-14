@@ -68,6 +68,19 @@
         <button id="add_article_manage">Thêm bài viết</button>
 
         <h2 id="title_manage_article">Quản lý bài viết</h2>
+        <div id="search-container" style="margin-bottom: 20px">
+          <input
+            type="text"
+            id="searchInput"
+            placeholder="Tìm kiếm theo tiêu đề hoặc nội dung..."
+            style="
+              padding: 8px;
+              width: 300px;
+              border-radius: 4px;
+              border: 1px solid #ccc;
+            "
+          />
+        </div>
         <table id="table_articles">
           <thead>
             <tr>
@@ -80,8 +93,7 @@
               <th>Hành động</th>
             </tr>
           </thead>
-          <tbody id="article-table-body">
-          </tbody>
+          <tbody id="article-table-body"></tbody>
         </table>
       </div>
     </div>

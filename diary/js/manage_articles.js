@@ -65,9 +65,9 @@ function closeDeleteModal() {
   deleteTargetId = null;
 }
 
-function renderArticles() {
+function renderArticles(data = articles) {
   articleTableBody.innerHTML = "";
-  articles.forEach((article) => {
+  data.forEach((article) => {
     const tr = document.createElement("tr");
 
     const imgCell = document.createElement("td");
@@ -201,6 +201,18 @@ function saveArticle(articleObj) {
 //   localStorage.setItem("articles",JSON.stringify(articles));
 //   renderArticles();
 // }
+
+const searchInput = document.getElementById("searchInput");
+
+searchInput.addEventListener("input", () => {
+  const keyword = searchInput.value.toLowerCase();
+  const filtered = articles.filter(
+    (article) =>
+      article.title.toLowerCase().includes(keyword) ||
+      article.content.toLowerCase().includes(keyword)
+  );
+  renderArticles(filtered);
+});
 
 add_option_categories();
 renderArticles();

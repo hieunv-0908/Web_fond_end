@@ -567,3 +567,9 @@ table {
 #deleteConfirmBox{
   position: fixed;
 }
+
+#search-container{
+  /* border: 1px solid black; */
+  position: relative;
+  top: 50px;
+}
